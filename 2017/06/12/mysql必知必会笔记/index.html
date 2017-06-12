@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>mysql必知必会笔记 | Cherry</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="MySQL必知必会标签（空格分隔）： MySQL  第一章1.表中的任何列都可以作为主键， 只要它满足以下条件：任意两行都不具有相同的主键值；每一行都必须具有一个主键值（ 主键列不允许NULL值） ；主键列中的值不允许修改或更新；">
+  <meta name="description" content="第一章1.表中的任何列都可以作为主键， 只要它满足以下条件：任意两行都不具有相同的主键值；每一行都必须具有一个主键值（ 主键列不允许NULL值） ；主键列中的值不允许修改或更新；">
 <meta name="keywords" content="SQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql必知必会笔记">
 <meta property="og:url" content="http://yoursite.com/2017/06/12/mysql必知必会笔记/index.html">
 <meta property="og:site_name" content="Cherry">
-<meta property="og:description" content="MySQL必知必会标签（空格分隔）： MySQL  第一章1.表中的任何列都可以作为主键， 只要它满足以下条件：任意两行都不具有相同的主键值；每一行都必须具有一个主键值（ 主键列不允许NULL值） ；主键列中的值不允许修改或更新；">
-<meta property="og:updated_time" content="2017-06-12T09:27:36.125Z">
+<meta property="og:description" content="第一章1.表中的任何列都可以作为主键， 只要它满足以下条件：任意两行都不具有相同的主键值；每一行都必须具有一个主键值（ 主键列不允许NULL值） ；主键列中的值不允许修改或更新；">
+<meta property="og:updated_time" content="2017-06-12T09:30:13.707Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql必知必会笔记">
-<meta name="twitter:description" content="MySQL必知必会标签（空格分隔）： MySQL  第一章1.表中的任何列都可以作为主键， 只要它满足以下条件：任意两行都不具有相同的主键值；每一行都必须具有一个主键值（ 主键列不允许NULL值） ；主键列中的值不允许修改或更新；">
+<meta name="twitter:description" content="第一章1.表中的任何列都可以作为主键， 只要它满足以下条件：任意两行都不具有相同的主键值；每一行都必须具有一个主键值（ 主键列不允许NULL值） ；主键列中的值不允许修改或更新；">
   
     <link rel="alternative" href="/atom.xml" title="Cherry" type="application/atom+xml">
   
@@ -174,9 +174,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="MySQL必知必会"><a href="#MySQL必知必会" class="headerlink" title="MySQL必知必会"></a>MySQL必知必会</h1><p>标签（空格分隔）： MySQL</p>
-<hr>
-<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>1.表中的任何列都可以作为主键， 只要它满足以下条件：<br>任意两行都不具有相同的主键值；<br>每一行都必须具有一个主键值（ 主键列不允许NULL值） ；<br>主键列中的值不允许修改或更新；<br><a id="more"></a><br>主键值不能重用（ 如果某行从表中删除， 它的主键不能赋给以后的新行）<br>2.MySQL的要求：任意两行都不具有相同的主键值；<br>每个行都必须具有一个主键值（主键列不允许NULL值）。<br>3.<strong>tips</strong>：除MySQL强制实施的规则外，应该坚持的<br>几个普遍认可的最好习惯为：<br><strong>不更新主键列中的值；<br>不重用主键列的值；</strong><br><strong>不在主键列中使用可能会更改的值。</strong>（例如，如果使用一个<br>名字作为主键以标识某个供应商，当该供应商合并和更改其<br>名字时，必须更改这个主键。）</p>
+        <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>1.表中的任何列都可以作为主键， 只要它满足以下条件：<br>任意两行都不具有相同的主键值；<br>每一行都必须具有一个主键值（ 主键列不允许NULL值） ；<br>主键列中的值不允许修改或更新；<br><a id="more"></a><br>主键值不能重用（ 如果某行从表中删除， 它的主键不能赋给以后的新行）<br>2.MySQL的要求：任意两行都不具有相同的主键值；<br>每个行都必须具有一个主键值（主键列不允许NULL值）。<br>3.<strong>tips</strong>：除MySQL强制实施的规则外，应该坚持的<br>几个普遍认可的最好习惯为：<br><strong>不更新主键列中的值；<br>不重用主键列的值；</strong><br><strong>不在主键列中使用可能会更改的值。</strong>（例如，如果使用一个<br>名字作为主键以标识某个供应商，当该供应商合并和更改其<br>名字时，必须更改这个主键。）</p>
 <h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>1.MySQL选项和参数 如果仅输入mysql， 可能会出现一个错误<br>消息。因为可能需要安全证书，或者是因为MySQL没有运行<br>在本地或默认端口上。 mysql接受你可以（和可能需要）使用<br>的一组命令行参数。例如，为了指定用户登录名ben，应该使<br>用mysql -u ben。为了给出用户名、主机名、端口和口令，<br>应该使用mysql -u ben -p -h myserver -P 9999。<br>完整的命令行选项和参数列表可用mysql –help获得。<br>2.命令输入在mysql&gt;之后；<br>命令用;或\g结束，换句话说，仅按Enter不执行命令；<br>输入help或\h获得帮助，也可以输入更多的文本获得特定命令的<br>帮助（如，输入help select获得使用SELECT语句的帮助）；<br>输入quit或exit退出命令行实用程序。</p>
 <h2 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h2><p>1.必须先使用USE打开数据库，才能读取其中的数据。<br>2.SHOW COLUMNS 要 求 给 出 一 个 表 名 （ 这 个 例 子 中 的 FROM<br>customers），它对每个字段返回一行，行中包含字段名、数据<br>类型、是否允许NULL、键信息、默认值以及其他信息（如字段cust_id<br>的auto_increment）。<br>什么是自动增量？ 某些表列需要唯一值。例如，订单编号、<br>雇员ID或（如上面例子中所示的）顾客ID。在每个行添加到表<br>中时， MySQL可以自动地为每个行分配下一个可用编号，不<br>用在添加一行时手动分配唯一值（这样做必须记住最后一次使<br>用的值）。这个功能就是所谓的自动增量。<br>3.SHOW STATUS，用于显示广泛的服务器状态信息；<br>SHOW CREATE DATABASE和SHOW CREATE TABLE，分别用来显示创<br>建特定数据库或表的MySQL语句；<br>SHOW GRANTS，用来显示授予用户（所有用户或特定用户）的安<br>全权限；<br>SHOW ERRORS和SHOW WARNINGS， 用来显示服务器错误或警告消息。</p>
 <h2 id="第四章-检索数据"><a href="#第四章-检索数据" class="headerlink" title="第四章 检索数据"></a>第四章 检索数据</h2><p>1.要想从一个表中检索多个列，使用相同的SELECT语句。唯一的不同<br>是必须在SELECT关键字后给出多个列名，列名之间必须以逗号分隔。<br>2.mysql命令行用；<br>3.在选择多个列时，一定要在列名之间加上逗号，但<br>最后一个列名后不加。如果在最后一个列名后加了逗号，将出<br>现错误。<br>4.如果给定一个通配符（ *），则返回表中所有列<br>5.<code>SELECT DISTINCT vend_id</code>告诉MySQL只返回不同（唯一）的<br>vend_id行，因此只返回4行.不能部分使用DISTINCT DISTINCT关键字应用于所有列而<br>不仅是前置它的列。<br>6.此语句使用SELECT语句检索单个列。 LIMIT 5指示MySQL返回<br>不多于5行.LIMIT 5, 5指示MySQL返回从行5开始的5行。<br>7.<code>SELECT products.prod_name FROM products;</code></p>
@@ -604,11 +602,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
