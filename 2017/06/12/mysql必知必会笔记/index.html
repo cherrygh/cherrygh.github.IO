@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Cherry</title>
+  <title>mysql必知必会笔记 | Cherry</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Cherry">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="MySQL必知必会标签（空格分隔）： MySQL  第一章1.表中的任何列都可以作为主键， 只要它满足以下条件：任意两行都不具有相同的主键值；每一行都必须具有一个主键值（ 主键列不允许NULL值） ；主键列中的值不允许修改或更新；">
+<meta name="keywords" content="SQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql必知必会笔记">
+<meta property="og:url" content="http://yoursite.com/2017/06/12/mysql必知必会笔记/index.html">
 <meta property="og:site_name" content="Cherry">
+<meta property="og:description" content="MySQL必知必会标签（空格分隔）： MySQL  第一章1.表中的任何列都可以作为主键， 只要它满足以下条件：任意两行都不具有相同的主键值；每一行都必须具有一个主键值（ 主键列不允许NULL值） ；主键列中的值不允许修改或更新；">
+<meta property="og:updated_time" content="2017-06-12T09:27:36.125Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cherry">
+<meta name="twitter:title" content="mysql必知必会笔记">
+<meta name="twitter:description" content="MySQL必知必会标签（空格分隔）： MySQL  第一章1.表中的任何列都可以作为主键， 只要它满足以下条件：任意两行都不具有相同的主键值；每一行都必须具有一个主键值（ 主键列不允许NULL值） ；主键列中的值不允许修改或更新；">
   
     <link rel="alternative" href="/atom.xml" title="Cherry" type="application/atom+xml">
   
@@ -149,16 +154,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-mysql必知必会笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-mysql必知必会笔记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/12/mysql必知必会笔记/">mysql必知必会笔记</a>
+    <h1 class="article-title" itemprop="name">
+      mysql必知必会笔记
     </h1>
   
 
@@ -173,12 +176,223 @@
       
         <h1 id="MySQL必知必会"><a href="#MySQL必知必会" class="headerlink" title="MySQL必知必会"></a>MySQL必知必会</h1><p>标签（空格分隔）： MySQL</p>
 <hr>
-<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>1.表中的任何列都可以作为主键， 只要它满足以下条件：<br>任意两行都不具有相同的主键值；<br>每一行都必须具有一个主键值（ 主键列不允许NULL值） ；<br>主键列中的值不允许修改或更新；<br>
-        
-          <a class="article-more-a" href="/2017/06/12/mysql必知必会笔记/#more">more >></a>
-        
+<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>1.表中的任何列都可以作为主键， 只要它满足以下条件：<br>任意两行都不具有相同的主键值；<br>每一行都必须具有一个主键值（ 主键列不允许NULL值） ；<br>主键列中的值不允许修改或更新；<br><a id="more"></a><br>主键值不能重用（ 如果某行从表中删除， 它的主键不能赋给以后的新行）<br>2.MySQL的要求：任意两行都不具有相同的主键值；<br>每个行都必须具有一个主键值（主键列不允许NULL值）。<br>3.<strong>tips</strong>：除MySQL强制实施的规则外，应该坚持的<br>几个普遍认可的最好习惯为：<br><strong>不更新主键列中的值；<br>不重用主键列的值；</strong><br><strong>不在主键列中使用可能会更改的值。</strong>（例如，如果使用一个<br>名字作为主键以标识某个供应商，当该供应商合并和更改其<br>名字时，必须更改这个主键。）</p>
+<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>1.MySQL选项和参数 如果仅输入mysql， 可能会出现一个错误<br>消息。因为可能需要安全证书，或者是因为MySQL没有运行<br>在本地或默认端口上。 mysql接受你可以（和可能需要）使用<br>的一组命令行参数。例如，为了指定用户登录名ben，应该使<br>用mysql -u ben。为了给出用户名、主机名、端口和口令，<br>应该使用mysql -u ben -p -h myserver -P 9999。<br>完整的命令行选项和参数列表可用mysql –help获得。<br>2.命令输入在mysql&gt;之后；<br>命令用;或\g结束，换句话说，仅按Enter不执行命令；<br>输入help或\h获得帮助，也可以输入更多的文本获得特定命令的<br>帮助（如，输入help select获得使用SELECT语句的帮助）；<br>输入quit或exit退出命令行实用程序。</p>
+<h2 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h2><p>1.必须先使用USE打开数据库，才能读取其中的数据。<br>2.SHOW COLUMNS 要 求 给 出 一 个 表 名 （ 这 个 例 子 中 的 FROM<br>customers），它对每个字段返回一行，行中包含字段名、数据<br>类型、是否允许NULL、键信息、默认值以及其他信息（如字段cust_id<br>的auto_increment）。<br>什么是自动增量？ 某些表列需要唯一值。例如，订单编号、<br>雇员ID或（如上面例子中所示的）顾客ID。在每个行添加到表<br>中时， MySQL可以自动地为每个行分配下一个可用编号，不<br>用在添加一行时手动分配唯一值（这样做必须记住最后一次使<br>用的值）。这个功能就是所谓的自动增量。<br>3.SHOW STATUS，用于显示广泛的服务器状态信息；<br>SHOW CREATE DATABASE和SHOW CREATE TABLE，分别用来显示创<br>建特定数据库或表的MySQL语句；<br>SHOW GRANTS，用来显示授予用户（所有用户或特定用户）的安<br>全权限；<br>SHOW ERRORS和SHOW WARNINGS， 用来显示服务器错误或警告消息。</p>
+<h2 id="第四章-检索数据"><a href="#第四章-检索数据" class="headerlink" title="第四章 检索数据"></a>第四章 检索数据</h2><p>1.要想从一个表中检索多个列，使用相同的SELECT语句。唯一的不同<br>是必须在SELECT关键字后给出多个列名，列名之间必须以逗号分隔。<br>2.mysql命令行用；<br>3.在选择多个列时，一定要在列名之间加上逗号，但<br>最后一个列名后不加。如果在最后一个列名后加了逗号，将出<br>现错误。<br>4.如果给定一个通配符（ *），则返回表中所有列<br>5.<code>SELECT DISTINCT vend_id</code>告诉MySQL只返回不同（唯一）的<br>vend_id行，因此只返回4行.不能部分使用DISTINCT DISTINCT关键字应用于所有列而<br>不仅是前置它的列。<br>6.此语句使用SELECT语句检索单个列。 LIMIT 5指示MySQL返回<br>不多于5行.LIMIT 5, 5指示MySQL返回从行5开始的5行。<br>7.<code>SELECT products.prod_name FROM products;</code></p>
+<h2 id="第五章，排序"><a href="#第五章，排序" class="headerlink" title="第五章，排序"></a>第五章，排序</h2><p>1.</p>
+<pre><code>SELECT prod_name
+FROM products
+ORDER BY prod_name;
+</code></pre><p>2.</p>
+<pre><code>SELECT prod_id,prod_price,prod_name FROM products
+ORDER BY prod_price,prod_name DESC;
+</code></pre><p>DESC表示降序，ASC是升序<br>3.如何区分大小写和排序顺序是数据库管理员设定规则<br>4.<strong>在给出ORDER BY子句时，应该保证它<br>位于FROM子句之后。如果使用LIMIT，它必须位于ORDER BY<br>之后。使用子句的次序不对将产生错误消息。</strong></p>
+<h2 id="第六章-过滤数据"><a href="#第六章-过滤数据" class="headerlink" title="第六章 过滤数据"></a>第六章 过滤数据</h2><p>1.</p>
+<pre><code>SELECT prod_name,prod_price
+FROM products
+WHERE prod_price=2.50
+</code></pre><p>2.<strong>在同时使用ORDER BY和WHERE子句时，应<br>该让ORDER BY位于WHERE之后， 否则将会产生错误</strong><br>3.</p>
+<pre><code>SELECT prod_name,prod_price 
+FROM products
+WHERE prod_price BETWEEN 5 AND 10;
+</code></pre><p>4.</p>
+<pre><code>SELECT prod_name
+FROM products
+WHERE prod_price IS NULL;
+</code></pre><h2 id="第七章-数据过滤"><a href="#第七章-数据过滤" class="headerlink" title="第七章 数据过滤"></a>第七章 数据过滤</h2><p>1.AND在计算次序中优先级更高。<br>2.</p>
+<pre><code>SELECT prod_name，prod_price
+FROM products
+WHERE vend_id NOT IN (1002,1003)
+ORDER BY prod_name；
+</code></pre><p>3.MySQL 支 持 使 用 NOT 对 IN 、 BETWEEN 和<br>EXISTS子句取反，这与多数其他DBMS允许使用NOT对各种条件<br>取反有很大的差别。</p>
+<h2 id="第八章-用通配符进行过滤"><a href="#第八章-用通配符进行过滤" class="headerlink" title="第八章 用通配符进行过滤"></a>第八章 用通配符进行过滤</h2><p>1.通配符，搜索模式，在搜索子句中用通配符必须使用LIKE操作符<br>2.</p>
+<pre><code>SELECT prod_id，prod_name
+FROM products
+WHERE prod_name LIKE &apos;jet%&apos;;
+</code></pre><p>%表示任何字符出现的任意次数。<br>3.tips：尾空格可能会干扰通配符匹配。例如，在保存词<br>anvil 时 ， 如 果 它 后 面 有 一 个 或 多 个 空 格 ， 则 子 句 WHERE<br>prod_name LIKE ‘%anvil’将不会匹配它们，因为在最后的l<br>后有多余的字符。解决这个问题的一个简单的办法是在搜索模<br>式最后附加一个%。<br>虽然似乎%通配符可以匹配任何东西，但有一个例<br>外，即NULL。即使是WHERE prod<em>name LIKE ‘%’也不能匹配<br>用值NULL作为产品名的行<br>4.与%能匹配0个字符不一样， </em>总是匹配一个字符，不能多也不能少。<br>5.tips：不要过度使用通配符。如果其他操作符能达到相同的目的，应该<br>使用其他操作符。<br>在确实需要使用通配符时，除非绝对有必要，否则不要把它们用<br>在搜索模式的开始处。把通配符置于搜索模式的开始处，搜索起<br>来是最慢的。<br>仔细注意通配符的位置。如果放错地方，可能不会返回想要的数</p>
+<h2 id="第九章-用正则表达式进行搜索"><a href="#第九章-用正则表达式进行搜索" class="headerlink" title="第九章 用正则表达式进行搜索"></a>第九章 用正则表达式进行搜索</h2><p>1.</p>
+<pre><code>SELECT prod_name
+FROM products
+WHERE prod_name REGEXP&apos;1000&apos;
+ORDER BY prod_name；
+</code></pre><p>2.LIKE是匹配整个列，REGEXP匹配列值，为在搜索子句中使用通配符，必须使用LIKE操作符。 LIKE指示MySQL，<br>后跟的搜索模式利用通配符匹配而不是直接相等匹配进行比较。<br>3.MySQL正则表达式匹配后不区分大小写。区分大小写可以用BINARY关键字，如WHERE prod_name REGEXP BINARY ‘JetPack.000’<br>4.匹配特定的字符用[].<br>5.否定字符集合用^.<br>6.正则表达式匹配列值，只要列值中含有就可以，LIKE则是匹配整个列形式。<br>7..是匹配任意字符，匹配特殊字符用\为前导。、|[].<br>8.\f换页，\n换行，\r回车，\t制表，\v纵向制表。<br>9.找出你自己经常使用的数字，所有字母字符或所有数字字母字符的匹配。预定义的字符类。<br>[:alnum:]任意字母和数字<br>[:alpha:]任意字符<br>[:blank:]空格和制表[\t]<br>[:cntrl:]ASCII控制字符 0到31和127<br>[:digit:]任意数字<br>[:graph:]与[:print:]相同，但不包括空格<br>[:lower:]任意小写<br>[:print:]任意可打印字符<br>[:punct:]既不是alnum也不是cntrl的字符<br>[:space:]包括空格在内的空白字符,同[\f\n\r\t\v]<br>[:upper:]<br>[:xdigit:]任意十六进制数字<br>10.匹配多个实例<br>*0个或多个匹配<br>+1个或多个<br>？0个或1个<br>{n}指定数目的匹配<br>{n，}不少于指定数目的匹配<br>{n,m}匹配数目的范围<br>11.^文本的开始 $文本的结尾 [[:&lt;:]]词的开始 [[:&gt;:]]词的结尾<br>SELECT ‘hello’ REGEXP ‘[0-9]’返回0</p>
+<h2 id="第十章-创建计算字段"><a href="#第十章-创建计算字段" class="headerlink" title="第十章 创建计算字段"></a>第十章 创建计算字段</h2><p><strong>1.存储在表中的数据都不是应用程序所需要的。<br>我们需要直接从数据库中检索出转换、计算或格式化过的数据；而不是<br>检索出数据，然后再在客户机应用程序或报告程序中重新格式化。<br>这就是计算字段发挥作用的所在了。与前面各章介绍过的列不同，<br>计算字段并不实际存在于数据库表中。计算字段是运行时在SELECT语句<br>内创建的。数据库知道SELECT语句中哪些列是实际的<br>表列，哪些列是计算字段。从客户机（如应用程序）的角度来看，计算<br>字段的数据是以与其他列的数据相同的方式返回的。</strong><br>2.tips：多数DBMS使用+或||来实现拼接，<br>MySQL则使用Concat()函数来实现。当把SQL语句转换成<br>MySQL语句时一定要把这个区别铭记在心<br>3.</p>
+<pre><code>SELECT Concat（vend_name,&apos;(&apos;,vend_country,&apos;)&apos;）
+FROM vendors
+ORDER BY vend_name;
+</code></pre><p>4.</p>
+<pre><code>SELECT Concat(RTrim(vend_name),&apos;(&apos;,RTrim(vend_country),&apos;)&apos;)
+FROM vendors
+ORDER BY vend_name；
+</code></pre><p>Rtrim去掉右边所有空格，Ltrim去掉左边所有空格<br>5.使用别名</p>
+<pre><code>SELECT Concat(RTrim(vend_name),&apos;(&apos;,RTrim(vend_country),&apos;）&apos;)AS
+vent_title
+FROM vendors
+ORDER BY vend_name;
+</code></pre><p>6.计算字段</p>
+<pre><code>SELECT prod_id,
+        quatity,
+        item_price,
+        quatity*item_price AS expanded_price
+FROM orderotems
+WHERE order_num=2005;
+</code></pre><h2 id="第十一章-用数据处理函数"><a href="#第十一章-用数据处理函数" class="headerlink" title="第十一章 用数据处理函数"></a>第十一章 用数据处理函数</h2><p>1.常用文本处理函数<br>Left()返回左边字符,Length(),Locate()找出串的一个子串，Lower(),LTrim(),Right(),Rtrim(),Soundex()返回串的soundex值，SubString()返回子串的字符，Upper()<br>2.</p>
+<pre><code>SELECT cust_name,cust_contact
+FROM customers
+WHERE Soundex(cust_contact)=Soundex(&apos;Y Lie&apos;);
+</code></pre><p>3.日期和时间处理函数<br>AddDate()天，周,AddTime()时，分，CurDate(),CurTime(),Date()日期时间的日期部分,DateDiff()日期之差，Date_Add()高度灵活的日期运算函数,Date_Format()返回格式化日期或者时间串，Day(),DayOfWeek(),Hour(),Minute(),Month(),Now(),Second(),Time(),Year()。<br>4.数值处理函数<br>abs(),cos(),exp(),mod(),pi(),rand()随机数，sin(),sqrt(),tan()</p>
+<h2 id="第十二章-汇总数据"><a href="#第十二章-汇总数据" class="headerlink" title="第十二章 汇总数据"></a>第十二章 汇总数据</h2><p>1.聚集函数 运行在行组上，计算和返回单个值的函数。<br>2.AVG()平均值COUNT()行数 MAX()MIN()SUM()<br>3.</p>
+<pre><code>SELECT AVG(prod_price)AS avg_price
+FROM products;
+</code></pre><p>4.确定特定列的平均值<br>AVG()忽略NULL的行</p>
+<pre><code>SELECT AVG(prod_price) AS avg_price
+FROM products
+WHERE vend_id =1003;
+</code></pre><p>5.COUNT()<br>COUNT(*)包含null，COUNT(column)忽略null</p>
+<pre><code>SELECT COUNT(*) AS num_cust
+FROM customers；
+</code></pre><p>6.MAX()在用于文本数据时，如果数<br>据按相应的列排序，则MAX()返回最后一行。？？？<br>7.</p>
+<pre><code>SELECT SUM(item_price*quantity)AS total_price
+FROM orderitems
+WHERE order_num=2005;
+</code></pre><p>8.distinct只考虑不同的</p>
+<pre><code>SELECT AVG(DISTICT prod_price)AS avg_price
+FROM products
+WHERE vend_id =1003;
+</code></pre><p>9tips:<br>如果指定列名，则DISTINCT只能用于COUNT()。DISTINCT<br>不能用于COUNT(*)，因此不允许使用COUNT（ DISTINCT），<br>否则会产生错误。类似地， DISTINCT必须使用列名，不能用<br>于计算或表达式。</p>
+<h2 id="第十三章-分组数据"><a href="#第十三章-分组数据" class="headerlink" title="第十三章 分组数据"></a>第十三章 分组数据</h2><p>1.</p>
+<pre><code>SELECT vend_id, COUNT(*) AS num_prods
+  FROM products
+  GROUP BY vend_id; 
+</code></pre><p>GROUP BY子句可以包含任意数目的列。这使得能对分组进行嵌套，<br>为数据分组提供更细致的控制。<br> 如果在GROUP BY子句中嵌套了分组，数据将在最后规定的分组上<br>进行汇总。换句话说，在建立分组时，指定的所有列都一起计算<br>（所以不能从个别的列取回数据）。<br> GROUP BY子句中列出的每个列都必须是检索列或有效的表达式<br>（但不能是聚集函数）。如果在SELECT中使用表达式，则必须在<br>GROUP BY子句中指定相同的表达式。不能使用别名。<br> 除聚集计算语句外， SELECT语句中的每个列都必须在GROUP BY子<br>句中给出。<br> 如果分组列中具有NULL值，则NULL将作为一个分组返回。如果列<br>中有多行NULL值，它们将分为一组。<br> GROUP BY子句必须出现在WHERE子句之后， ORDER BY子句之前。<br>使用有 WITH ROLLUP 子句的 GROUP BY 语句时，不能再使用 ORDER语句对结果集进行排序，如果对返回的结果顺序不满意，需要应用程序获得结果后在程序中进行排序<br>2.WHERE 过滤行，HAVING过滤分组</p>
+<pre><code>SELECT cust_id,COUNT(*)AS orders
+FROM orders
+GROUP BY cust_id
+HAVING count(*)&gt;=2;
+</code></pre><p>这里有另一种理解方法，WHERE在数据<br>分组前进行过滤， HAVING在数据分组后进行过滤。这是一个重<br>要的区别， WHERE排除的行不包括在分组中。这可能会改变计<br>算值，从而影响HAVING子句中基于这些值过滤掉的分组。<br>3.</p>
+<pre><code>SELECT vend_id,COUNT(*)AS num_prods
+FROM products
+WHERE prod_price&gt;=10
+GROUP BY vend_id
+HAVING COUNT(*)&gt;=2;
+</code></pre><p>4.如果用了having 就要用group by。</p>
+<pre><code>SELECT order_num,SUM(quatity*item_price)AS ordertotal
+FROM orderitems
+GROUP BY order_num
+HAVING SUM(quatity*item_price)&gt;=50
+ORDER BY ordertotal;
+</code></pre><p>5.SELECT 是<br>WHERE 否<br>GROUP BY 按组计算聚集使用<br>HAVING 否 ORDER BY<br>LIMIT 否</p>
+<h2 id="第十四章-使用子查询"><a href="#第十四章-使用子查询" class="headerlink" title="第十四章 使用子查询"></a>第十四章 使用子查询</h2><p>1.SQL</p>
+<pre><code>SELECT cust_id
+FROM orders
+WHERE order_num IN(SELECT order_num
+FROM orderitems
+WHERE prod_id=&apos;TNT2&apos;);
+</code></pre><p>2.</p>
+<pre><code>SELECT cust_name,cust_contact
+FROM customers
+WHERE cust_id IN(SELECT cust_id
+                FROM orders
+                WHERE order_num IN(SELECT order_num
+                                FROM orderitems
+                                WHERE prod_id=&apos;TNT2&apos;));
+</code></pre><p>3.列必须匹配：<br>在WHERE子句中使用子查询（如这里所示），应<br>该保证SELECT语句具有与WHERE子句中相同数目的列。通常，<br>子查询将返回单个列并且与单个列匹配，但如果需要也可以<br>使用多个列。<br>4.</p>
+<pre><code>SELECT cust_name,
+        cust_state,
+        (SELECT COUNT(*)
+        FROM orders
+        WHERE order.cust_id=customers.cust_id)AS orders
+    FROM customers
+    ORDER BY cust_name;
+</code></pre><h2 id="第十五章-联结表"><a href="#第十五章-联结表" class="headerlink" title="第十五章 联结表"></a>第十五章 联结表</h2><p>1.外键为某个表中的一列，它包含另一个表<br>的主键值，定义了两个表之间的关系。<br>2.在一条SELECT语句中联结几个表时，相应的关系是<br>在运行中构造的。在数据库表的定义中不存在能指示MySQL如何对表进<br>行联结的东西。你必须自己做这件事情。在联结两个表时，你实际上做<br>的是将第一个表中的每一行与第二个表中的每一行配对。 WHERE子句作为<br>过滤条件，它只包含那些匹配给定条件（这里是联结条件）的行。<br>3.由没有联结条件的表关系返回<br>的结果为笛卡儿积。检索出的行的数目将是第一个表中的行数乘<br>以第二个表中的行数。<br>4.</p>
+<pre><code>SELECT vend_name,prod_name,prod_price
+FROM vendors INNER JOIN products
+ON vendors.vend_id=products.vend_id;
+</code></pre><p>5.ANSI SQL规范首选INNER JOIN语法。此外，<br>尽管使用WHERE子句定义联结的确比较简单，但是使用明确的<br>联结语法能够确保不会忘记联结条件，有时候这样做也能影响<br>性能</p>
+<pre><code>SELECT cust_name,cust_contact
+FROM customers
+WHERE cust_id IN(SELECT cust_id
+                FROM orders
+                WHERE order_num IN(SELECT order_num
+                                FROM orderitems
+                                WHERE prod_id=&apos;TNT2&apos;));
+SELECT cust_name,cust_contact
+FROM customers,orders,orderitems
+WHERE customers.cust_id=orders.cust_id
+AND orderitems.order_num=order.order_num
+ADN prod_id=&apos;TNT2&apos;;
+</code></pre><h2 id="第十六章-创建高级联结"><a href="#第十六章-创建高级联结" class="headerlink" title="第十六章 创建高级联结"></a>第十六章 创建高级联结</h2><p>1.</p>
+<pre><code>SELECT p1.prod_id，p1.prod_name
+FROM products AS p1，products AS p2
+WHERE p1.vend_id=p2.vend_id
+ AND p2.prod_id=&apos;DTNTR&apos;;
+</code></pre><p> 自联结通常作为外部语句用来替代<br>从相同表中检索数据时使用的子查询语句。虽然最终的结果是<br>相同的，但有时候处理联结远比处理子查询快得多。应该试一<br>下两种方法，以确定哪一种的性能更好。<br>2.自然联结</p>
+<pre><code>SELECT c.*o.order_num,o.order_date,
+        oi.prood_id,oi.quatity,OI.item_price
+FROM customers AS c,orders AS o,orderitems AS oi
+WHERE c.cust_id=o.cust_id
+AND oi.order_num=o.order_num
+AND prod_id=&apos;FB&apos;;
+</code></pre><p>通配符只对第一个表使用。所有其他列明确列<br>出，所以没有重复的列被检索出来。<br>3.</p>
+<pre><code>SELECT customer.cust_id,orders.order_num
+FROM customers INNER JOIN orders
+ON customers.cust_id=orders.cust_id;
+</code></pre><p>4.</p>
+<pre><code>SELECT customer.cust_id,orders.order_num
+FROM customers LEFT OUTER JOIN orders
+ON customers.cust_id=orders.cust_id;
+</code></pre><p>这条SELECT语句使用了关<br>键字OUTER JOIN来指定联结的类型（而不是在WHERE子句中指<br>定）。但是，与内部联结关联两个表中的行不同的是，外部联结还包括没<br>有关联行的行。在使用OUTER JOIN语法时，必须使用RIGHT或LEFT关键字<br>指定包括其所有行的表（ RIGHT指出的是OUTER JOIN右边的表，而LEFT<br>指出的是OUTER JOIN左边的表）。上面的例子使用LEFT OUTER JOIN从FROM<br>子句的左边表（ customers表）中选择所有行。？？？<br>5.</p>
+<pre><code>SELECT customers.cust_name,
+         customers.cust_id,
+         COUNT(orders.order_num)AS num_ord
+ FROM customers INNER JOIN orders
+ ON customers.cust_id=orders.cust_id
+ GROUP BY custmers.cust_id;
+</code></pre><p> 6.</p>
+<pre><code>SELECT customers.cust_name,
+          customers.cust_id,
+          COUNT(orders.order_num)AS num_ord
+  FROM customers LEFT OUTER JOIN orders
+  ON customers.cust_id=orders.cust_id
+  GROUP BY customers.cust_id:
+</code></pre><h2 id="第十七章-组合查询"><a href="#第十七章-组合查询" class="headerlink" title="第十七章 组合查询"></a>第十七章 组合查询</h2><p>1.使用UNION</p>
+<pre><code>SELECT vend_id,prod_id,prod_price
+FROM products
+WHERE prod_price&lt;=5
+UNION
+SELECT vend_id,prod_id,prod_price
+FROM products
+WHERE vend_id IN(1001,1002);
+</code></pre><p>TIPS:UNION可能比使用WHERE子句更为复杂。<br>但对于更复杂的过滤条件，或者从多个表（而不是单个表）中检索数据<br>的情形，使用UNION可能会使处理更简单。</p>
+<ol>
+<li>UNION规则<br>必须由两条或两条以上的SELECT语句组成，语句之间用关<br>键字UNION分隔（因此，如果组合4条SELECT语句，将要使用3个<br>UNION关键字）。<br>UNION中的每个查询必须包含相同的列、表达式或聚集函数（不过<br>分析各个列不需要以相同的次序列出）。<br>列数据类型必须兼容：类型不必完全相同，但必须是DBMS可以<br>隐含地转换的类型（例如，不同的数值类型或不同的日期类型）。<br>如果遵守了这些基本规则或限制，则可以将并用于任何数据检索任务。<br><strong>UNION可以去除重复的行，想返回所有匹配行，使用UNION ALL 而不是UNION，在使用UNION组合查询的时候，只能使用一条ORDER BY，必须出现在最后一条SELECT语句之后 不能用多条</strong></li>
+</ol>
+<h2 id="第十八章，全文本搜索"><a href="#第十八章，全文本搜索" class="headerlink" title="第十八章，全文本搜索"></a>第十八章，全文本搜索</h2><p>1.MySQL<br>支持几种基本的数据库引擎。并非所有的引擎都支持本书所描<br>述的全文本搜索。两个最常使用的引擎为MyISAM和InnoDB，<br>前者支持全文本搜索，而后者不支持。这就是为什么虽然本书<br>中 创 建 的 多 数 样 例 表 使 用 InnoDB ， 而 有 一 个 样 例 表<br>（ productnotes表）却使用MyISAM的原因。</p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -198,283 +412,74 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/12/mysql必知必会笔记/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/06/12/mysql必知必会笔记/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
 
-
-
-
-
   
-    <article id="post-深入浅出统计学笔记-四" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/11/深入浅出统计学笔记-四/">深入浅出统计学笔记(四)</a>
-    </h1>
   
-
-        
-        <a href="/2017/06/11/深入浅出统计学笔记-四/" class="archive-article-date">
-  	<time datetime="2017-06-11T10:54:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="十三-假设检验的运用"><a href="#十三-假设检验的运用" class="headerlink" title="十三.假设检验的运用"></a>十三.假设检验的运用</h2><p>1.确定要进行检验的假设，选择检验统计量，确定用于做决策的拒绝域，求出检测统计量的p值，查看样本结果是否在拒绝域内，作出决策。<br>2.进行假设检验时，假定原假设为真，有足够证据反驳原假设，则拒绝原假设，接受备择假设。<br>3.为求拒绝域，需要先定下”显著性水平”。选择拒绝域的时候，还要考虑用单尾还是双尾进行检测。常用显著性水平为5%。用$\alpha$表示，表明你希望在观察结果的不可能程度达到多大时候拒绝$H_o$。<br>4.当备择假设&lt;时，使用左尾，备择假设&gt;时，使用右尾。<br>5.第一类错误:错误的拒绝了真原假设$H_o$；第二类错误：错误地接受假原假设。<br>
-        
-          <a class="article-more-a" href="/2017/06/11/深入浅出统计学笔记-四/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/11/深入浅出统计学笔记-四/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
+    <a href="/2017/06/11/深入浅出统计学笔记-四/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">深入浅出统计学笔记(四)</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
-    <article id="n-深入浅出统计学笔记-三" class="article article-type-n  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/11/深入浅出统计学笔记-三/">深入浅出统计学笔记(三)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/11/深入浅出统计学笔记-三/" class="archive-article-date">
-  	<time datetime="2017-06-10T17:09:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="十-统计抽样的运用"><a href="#十-统计抽样的运用" class="headerlink" title="十.统计抽样的运用"></a>十.统计抽样的运用</h2><p>1.简单随机抽样分为重复抽样和不重复抽样。<br>2.简单随机样本有两种方法：抽签或者用随机编号（编号然后随机抽），分层抽样（层与层不同），整群抽样（群与群不同），系统抽样（按某种顺序列出总体名单，然后每K个单位进行一次调查，但如果总体存在某种循环，则会有偏倚）。<br>
-        
-          <a class="article-more-a" href="/2017/06/11/深入浅出统计学笔记-三/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/11/深入浅出统计学笔记-三/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-深入浅出统计学笔记-二" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/09/深入浅出统计学笔记-二/">深入浅出统计学笔记(二)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/09/深入浅出统计学笔记-二/" class="archive-article-date">
-  	<time datetime="2017-06-09T15:48:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="五-离散概率分布的运用"><a href="#五-离散概率分布的运用" class="headerlink" title="五.离散概率分布的运用"></a>五.离散概率分布的运用</h2><p>1.随机变量期望$$E(X)=\sum_{}xP(X=x)$$<br>2.方差$$Var(X)=E(X-\mu)^2$$<br>3.方差越小，每局平均收益越接近期望值，方差越大，整体收益可靠性越低。<br>
-        
-          <a class="article-more-a" href="/2017/06/09/深入浅出统计学笔记-二/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/数学/" class="article-tag-list-link color3">数学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/09/深入浅出统计学笔记-二/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="n-深入浅出统计学笔记-一" class="article article-type-n  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/06/深入浅出统计学笔记-一/">深入浅出统计学笔记(一)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/06/深入浅出统计学笔记-一/" class="archive-article-date">
-  	<time datetime="2017-06-05T16:13:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一：信息图形化"><a href="#一：信息图形化" class="headerlink" title="一：信息图形化"></a>一：信息图形化</h2><p>1.频数表示在一个特定组内统计对象的数目。<br>2.条形体现趋势，饼图体现比例。<br>3.条形图的绘制注意频数和百分数，起标位置是否为零。水平条形图用于展现类别数据，尤其是类别名称太长的时候，垂直条形图用于展现数值型数据，堆积条形图比较频数，分段条形图可同时体现频数和百分比。条形图标都可以是百分比，也可以是频数。<br>4.类别数据是定性数据，数值型数据是定量数据。<br>5.直方图长方形面积与频数成比例。在直方图中频数密度等于长方形高度。直方图体现单独数字的时候把数字放在长方形中间。<br>6.折线图显示类别数据的情况，每条线代表一个类别，不应该应用于基于类别绘制线条。</p>
-<h2 id="二：集中趋势的量度"><a href="#二：集中趋势的量度" class="headerlink" title="二：集中趋势的量度"></a>二：集中趋势的量度</h2><p>1.如果数据向右偏斜，则均值位于中位数右边，向左倾斜，均值位于中位数左边(小于)。<br>2.众均值用于数据对称，中位数用于出现异常值发生偏斜，众数用于类别数据。<br>
-        
-          <a class="article-more-a" href="/2017/06/06/深入浅出统计学笔记-一/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/数学/" class="article-tag-list-link color3">数学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/06/深入浅出统计学笔记-一/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
+</nav>
 
 
 
@@ -482,9 +487,10 @@
 
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
   
 
 
@@ -507,8 +513,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
