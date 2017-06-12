@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 数学 | Cherry</title>
+  <title>算法导论笔记(一) | Cherry</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Cherry">
-<meta property="og:url" content="http://yoursite.com/tags/数学/index.html">
+  <meta name="description" content="第二章 算法基础2.1插入排序 1.插入排序伪码（升序） INSERTION-SORT(a) for j=2 to a.length     key=a[j]     i=j-1     while i&amp;gt;0 and a[i]&amp;gt;key         a[i+1]=a[i]         i=i-1     a[i+1]=key 2.循环不变式初始化：循环的第一次迭代之前为真。保持：如">
+<meta name="keywords" content="数据结构与算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法导论笔记(一)">
+<meta property="og:url" content="http://yoursite.com/2017/06/12/算法导论笔记-一/index.html">
 <meta property="og:site_name" content="Cherry">
+<meta property="og:description" content="第二章 算法基础2.1插入排序 1.插入排序伪码（升序） INSERTION-SORT(a) for j=2 to a.length     key=a[j]     i=j-1     while i&amp;gt;0 and a[i]&amp;gt;key         a[i+1]=a[i]         i=i-1     a[i+1]=key 2.循环不变式初始化：循环的第一次迭代之前为真。保持：如">
+<meta property="og:updated_time" content="2017-06-12T15:04:00.959Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cherry">
+<meta name="twitter:title" content="算法导论笔记(一)">
+<meta name="twitter:description" content="第二章 算法基础2.1插入排序 1.插入排序伪码（升序） INSERTION-SORT(a) for j=2 to a.length     key=a[j]     i=j-1     while i&amp;gt;0 and a[i]&amp;gt;key         a[i+1]=a[i]         i=i-1     a[i+1]=key 2.循环不变式初始化：循环的第一次迭代之前为真。保持：如">
   
     <link rel="alternative" href="/atom.xml" title="Cherry" type="application/atom+xml">
   
@@ -149,245 +154,179 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="n-算法导论笔记-一" class="article article-type-n " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      算法导论笔记(一)
+    </h1>
+  
+
+        
+        <a href="/2017/06/12/算法导论笔记-一/" class="archive-article-date">
+  	<time datetime="2017-06-12T15:03:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-12</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="第二章-算法基础"><a href="#第二章-算法基础" class="headerlink" title="第二章 算法基础"></a>第二章 算法基础</h2><p>2.1插入排序</p>
+<p>1.插入排序伪码（升序）</p>
+<pre><code>INSERTION-SORT(a)
+for j=2 to a.length
+    key=a[j]
+    i=j-1
+    while i&gt;0 and a[i]&gt;key
+        a[i+1]=a[i]
+        i=i-1
+    a[i+1]=key
+</code></pre><p>2.循环不变式<br>初始化：循环的第一次迭代之前为真。保持：如果循环的某次迭代之前它为真，那么下次迭代之前它仍为真。终止：循环终止时，不变式为我们提供一个有用性质，有助于证明算法是正确的。<br>3.伪代码约定<br>本书伪代码在for循环结束后，循环计数器的值是第一个超出for循环界限的那个值。<br>把表示一个数组或对象的变量看向是指向表示数组或对象的数据的一个指针，对于某个对象x的所有属性f，y=x导致y.f等于x.f。在赋值后，x，y指向相同的对象。<br>我们按值把参数传递给过程，被调用过程接受其参数自身的副本。如果它对某个参数赋值，调用过程看不到这种改变？？？<br>return语句将控制返回到调用过程的调用点<br>and和or是短路的，即x and y 如果x为f，不再求值y，类似x or y，当x求值为f，才会求值y。</p>
+<p>2.2分析算法</p>
+<p>1.想度量的是计算时间，用随机访问机（RAM）来作为我们的实现技术。<br>2.当一个for或者while循环按通常方式推出时，执行测试的次数比循环体内次数多1。<br>3.插入排序最坏情况运行时间$\theta(n^2)$。<br>4.分治算法<br>分解原问题为若干问题，解决这些子问题，递归的求解各子问题，合并这些子问题的解组成原问题的解。<br>归并排序算法符合分治模式。<br>5.分治法伪码描述</p>
+<pre><code>MERGEA(A,p,q,r)
+$n_1$=q-p+1
+$n_2$=r-q
+for i =1 to $n_1$
+    L[i]=A[p+i-1]
+for j=1 to $n_2$
+    R[j]=A[q+j]
+L[$n_1$+1]=$\infty$
+R[$n_1$+1]=$\infty$
+i=1
+j=1
+for k=p to r
+    if L[i]$\leg$R[j]
+    A[k]=L[i]
+    i=i+1
+else A[k]=R[j]
+    j=j+1
+</code></pre>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/11/深入浅出统计学笔记-四/" class="archive-article-date">
-  	<time datetime="2017-06-11T10:54:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/11/深入浅出统计学笔记-四/">深入浅出统计学笔记(四)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数学</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构与算法</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/06/12/算法导论笔记-一/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-n">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/11/深入浅出统计学笔记-三/" class="archive-article-date">
-  	<time datetime="2017-06-10T17:09:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/11/深入浅出统计学笔记-三/">深入浅出统计学笔记(三)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/09/深入浅出统计学笔记-二/" class="archive-article-date">
-  	<time datetime="2017-06-09T15:48:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/09/深入浅出统计学笔记-二/">深入浅出统计学笔记(二)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/数学/" class="article-tag-list-link color3">数学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-n">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/06/深入浅出统计学笔记-一/" class="archive-article-date">
-  	<time datetime="2017-06-05T16:13:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/06/深入浅出统计学笔记-一/">深入浅出统计学笔记(一)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/数学/" class="article-tag-list-link color3">数学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-“cn">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/05/程序员的数学/" class="archive-article-date">
-  	<time datetime="2017-06-04T17:36:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/05/程序员的数学/">《程序员的数学》笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/数学/" class="article-tag-list-link color3">数学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/06/12/mysql必知必会笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">mysql必知必会笔记</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-    
+  
+
+  
 
 
           </div>
@@ -410,9 +349,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",

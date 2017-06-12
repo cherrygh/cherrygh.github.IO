@@ -151,6 +151,94 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="n-算法导论笔记-一" class="article article-type-n  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/12/算法导论笔记-一/">算法导论笔记(一)</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/12/算法导论笔记-一/" class="archive-article-date">
+  	<time datetime="2017-06-12T15:03:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="第二章-算法基础"><a href="#第二章-算法基础" class="headerlink" title="第二章 算法基础"></a>第二章 算法基础</h2><p>2.1插入排序</p>
+<p>1.插入排序伪码（升序）</p>
+<pre><code>INSERTION-SORT(a)
+for j=2 to a.length
+    key=a[j]
+    i=j-1
+    while i&gt;0 and a[i]&gt;key
+        a[i+1]=a[i]
+        i=i-1
+    a[i+1]=key
+</code></pre><p>2.循环不变式<br>初始化：循环的第一次迭代之前为真。保持：如果循环的某次迭代之前它为真，那么下次迭代之前它仍为真。终止：循环终止时，不变式为我们提供一个有用性质，有助于证明算法是正确的。<br>3.伪代码约定<br>本书伪代码在for循环结束后，循环计数器的值是第一个超出for循环界限的那个值。<br>把表示一个数组或对象的变量看向是指向表示数组或对象的数据的一个指针，对于某个对象x的所有属性f，y=x导致y.f等于x.f。在赋值后，x，y指向相同的对象。<br>我们按值把参数传递给过程，被调用过程接受其参数自身的副本。如果它对某个参数赋值，调用过程看不到这种改变？？？<br>return语句将控制返回到调用过程的调用点<br>and和or是短路的，即x and y 如果x为f，不再求值y，类似x or y，当x求值为f，才会求值y。</p>
+<p>2.2分析算法</p>
+<p>1.想度量的是计算时间，用随机访问机（RAM）来作为我们的实现技术。<br>2.当一个for或者while循环按通常方式推出时，执行测试的次数比循环体内次数多1。<br>3.插入排序最坏情况运行时间$\theta(n^2)$。<br>4.分治算法<br>分解原问题为若干问题，解决这些子问题，递归的求解各子问题，合并这些子问题的解组成原问题的解。<br>归并排序算法符合分治模式。<br>5.分治法伪码描述</p>
+<pre><code>MERGEA(A,p,q,r)
+$n_1$=q-p+1
+$n_2$=r-q
+for i =1 to $n_1$
+    L[i]=A[p+i-1]
+for j=1 to $n_2$
+    R[j]=A[q+j]
+L[$n_1$+1]=$\infty$
+R[$n_1$+1]=$\infty$
+i=1
+j=1
+for k=p to r
+    if L[i]$\leg$R[j]
+    A[k]=L[i]
+    i=i+1
+else A[k]=R[j]
+    j=j+1
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构与算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/12/算法导论笔记-一/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-mysql必知必会笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -406,79 +494,6 @@
 
 
   
-    <article id="n-深入浅出统计学笔记-一" class="article article-type-n  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/06/深入浅出统计学笔记-一/">深入浅出统计学笔记(一)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/06/深入浅出统计学笔记-一/" class="archive-article-date">
-  	<time datetime="2017-06-05T16:13:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一：信息图形化"><a href="#一：信息图形化" class="headerlink" title="一：信息图形化"></a>一：信息图形化</h2><p>1.频数表示在一个特定组内统计对象的数目。<br>2.条形体现趋势，饼图体现比例。<br>3.条形图的绘制注意频数和百分数，起标位置是否为零。水平条形图用于展现类别数据，尤其是类别名称太长的时候，垂直条形图用于展现数值型数据，堆积条形图比较频数，分段条形图可同时体现频数和百分比。条形图标都可以是百分比，也可以是频数。<br>4.类别数据是定性数据，数值型数据是定量数据。<br>5.直方图长方形面积与频数成比例。在直方图中频数密度等于长方形高度。直方图体现单独数字的时候把数字放在长方形中间。<br>6.折线图显示类别数据的情况，每条线代表一个类别，不应该应用于基于类别绘制线条。</p>
-<h2 id="二：集中趋势的量度"><a href="#二：集中趋势的量度" class="headerlink" title="二：集中趋势的量度"></a>二：集中趋势的量度</h2><p>1.如果数据向右偏斜，则均值位于中位数右边，向左倾斜，均值位于中位数左边(小于)。<br>2.众均值用于数据对称，中位数用于出现异常值发生偏斜，众数用于类别数据。<br>
-        
-          <a class="article-more-a" href="/2017/06/06/深入浅出统计学笔记-一/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/数学/" class="article-tag-list-link color3">数学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/06/深入浅出统计学笔记-一/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -605,6 +620,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数据结构与算法</a>
               </li>
             
             <div class="clearfix"></div>
