@@ -171,56 +171,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="第一章-基础"><a href="#第一章-基础" class="headerlink" title="第一章 基础"></a>第一章 基础</h2><p>1.1.1java程序的基本结构<br>1.原始数据类型，语句（声明，赋值，条件，循环，调用，返回），数组，静态方法，字符串，标准输入\输出，数据抽象。<br>2.要执行一个java程序，先用javac命令编译它，然后再用java命令运行它，例如，javac BinarySearch.java，然后输入java BinarySearch。<br>1.1.2原始数据类型与表达式<br>1.64位整数long，16位整数short，16位字符char，8位整数byte，32位单精度实数float。<br>1.1.3语句<br>1.java是一种强语言类型，会检查类型的一致性。<br>2.数组的简化写法 <code>double[]a =new double[N];</code><br>3.典型数组处理代码<br>矩阵相乘（方阵）<br>a[][]*b[][]=c[][]</p>
-<pre><code>int N=a.length;
-double[][]c=new double[N][N];
-for(int i=0;i&lt;N;i++)
-    for(int j=0;j&lt;N;j++)
-        {for(int k=0;k&lt;N;k++)
-        c[i][j]+=a[i][k]*b[k][j];}
-</code></pre><p>4.起别名</p>
-<pre><code>int[]a=new int[N];
-a[i]=1234;
-int[]b=1;
-b[i]=5678;//a[i]的值也会变成5678
-</code></pre><p><strong>如果想将数组复制一份，那么应该声明，创建初始化一个新数组，然后将原数组元素挨个复制到新数组</strong><br>5.java会默认数值类型数组初始化为0，布尔型初始化为false。<br>6.静态方法是一组在被调用时候会被顺序执行的语句，修饰符static会将其与实例方法区别开。静态方法由签名（关键字public static以及函数的返回值，方法和各类型参数）和函数体组成。<br>7.典型静态方法的实现（P27）<br>计算一个整数的绝对值public static int abs(int x)<br>计算一个浮点数的绝对值public static double abs(double x)<br>判断一个数是否是素数public static boolean isPrime(int N)<br>计算平方根(牛顿迭代法)public static double sqrt(double c)？？？<br>计算直角三角形的斜边public static double hypotenuse(double a ,double b)<br>计算调和级数public static double H(int N)<br>8.方法的参数按值传递，方法名可以被重载，方法只能返回一个值，但可以包含多个返回语句，方法可以产生副作用。<br>9.编写递归：递归有一个最简单情况，方法的第一条语句包含return，递归调用尝试解决规模更小的子问题，递归调用的父问题和子问题之间不应该有交集。<br>10.java数学函数库的API</p>
-<pre><code>public class Math
-    static double abs(double a)
-    static double max(double a,double b)
-    static double min(double a ,double b)
-    static double sin(double theta)
-    static double cos(double theta)
-    static double tan(double theta)
-</code></pre><p>toDegress()，toRadians()转换角度和弧度<br>反函数asin(),acos(),atan().</p>
-<pre><code>static double exp(double a)
- static double log(double a)
- static double pow(double a,double b)
- static double random()
- static double sqrt(double a)
- static double E
- static double PI
-</code></pre><p>随机静态方法库API和数据分析静态方法库API<br>！<a href="http://wx2.sinaimg.cn/mw690/0060zpJSly1fgjo09wqq2j30n30fpae1.jpg" target="_blank" rel="external"></a><br>StdRandom的initialize()方法为随机数生成器提供种子<br>StaRandom库中静态方法的实现（离散概率随机返回int值？？？）<br>！<a href="http://wx2.sinaimg.cn/mw690/0060zpJSly1fgjoh94rfoj30oe0i5juu.jpg" target="_blank" rel="external"></a><br>11.应该将自己编写的每一个程序当做一个日后可以重用的库<br>编写用例，明确静态方法库和与之对应的API,实现API和一个能够对方法进行独立测试的main()函数。<br>12.字符类型转换<br>public class Integer<br>    static int parseInt(String s)<br>    static String toString(int i)<br>public class Double<br>    static double parseDouble(String s)<br>    static String toString(double x)<br>1.1.9输入输出<br>1.当你输入java和一个库名及一系列字符串之后，java系统会调用库的main()方法将一系列字符串变成一个数组作为参数传递给它。<br>2.java类包含静态方法main(),它有一个string数组类型的参数arg[],数组内容为命令行参数，默认为字符串，如果需要的是数字，可以用Integer.parseInt()的方法将其转化为适当数据类型的值。<br>3.StdOut库的作用是支持标准输出</p>
-<pre><code>public class StdOut
-    static void print(String s)
-    static void println(String s)
-    static void println()
-    static void print(String f,...)
-</code></pre><p>4.使用printf格式化字符串中的转换代码和对应参数的数据类型必须匹配。<br>！<a href="http://wx2.sinaimg.cn/mw690/0060zpJSly1fgjq2r3x36j30nu06mwft.jpg" target="_blank" rel="external"></a><br>5.stdin和stdout示例<br>    public class Average<br>    {<br>        public static void main(String[] args)<br>        {//<br>            double sum=0.0;<br>            int cnt=0;<br>            while(!StdIn.isEmpty())<br>            {<br>                sum+=StdIn.readDouble();<br>                cnt++;<br>            }<br>            double avg=sum/cnt;<br>            StdOut.printf(“Average is %.5f\n”,avg);<br>        }// }<br>    }</p>
-<p>由<ctrl-d>结束<br>用于读取和写入数组的静态方法API<br><img src="http://wx4.sinaimg.cn/mw690/0060zpJSly1fgjqgxi7jdj30mp0aadij.jpg" alt=""><br>6.重定向与管道</ctrl-d></p>
-<pre><code>% java RandomSeq 1000 100.0 200.0 &gt; data.txt //输出
-% java Average &lt; data.txt //输入
-% java RandomSeq 1000 100.0 200.0 | java.Average //将一个程序的输出通过管道作为另一个程序的输入
-</code></pre><p>7.用于读取和写入数组的静态方法API</p>
-<pre><code>public class In
-    static int[] readInts(String name)
-    static double[] readDoubles(String name)
-    static String[] readStrings(String name)
-public class Out
-    static void write(int[],String name)
-    static void write(double[] a,String name)
-    static void write(String[] a,String name)
-</code></pre><p>8.绘图库？？？<br>标准图库静态方法API<br>！<a href="http://wx2.sinaimg.cn/mw690/0060zpJSly1fgjqvghw27j30mx0amq55.jpg" target="_blank" rel="external"></a><br>setPenColor(),BLACK,BLUE,CYAN,BARK_GRAY,GRAY,GREEN,LIGHT_GRAY,MAGENTA,ORANGE,PINK,RED,BOOK_RED,WHITE,YELLOW(StdDraw.RED)<br>标准绘图库静态(控制)方法的API<br><img src="http://wx4.sinaimg.cn/mw690/0060zpJSly1fgjqzeddmkj30nf07qtax.jpg" alt=""><br>9.答疑<br>1.1/0除零异常，1.0/0.0等于infinity。<br>2.a%b取a的符号。<br>3.在java中，一个静态方法不能把另一个静态方法作为参数。</p>
-
+        <h2 id="第一章-基础"><a href="#第一章-基础" class="headerlink" title="第一章 基础"></a>第一章 基础</h2><p>1.1.1 java程序的基本结构</p>
+<p>1.原始数据类型，语句（声明，赋值，条件，循环，调用，返回），数组，静态方法，字符串，标准输入\输出，数据抽象。<br>2.要执行一个java程序，先用javac命令编译它，然后再用java命令运行它，例如，javac BinarySearch.java，然后输入java BinarySearch。<br>
+        
+          <a class="article-more-a" href="/2017/06/13/算法第四版笔记-一/#more">more >></a>
+        
       
 
       
@@ -646,6 +601,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
@@ -654,15 +613,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数据结构与算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
             
             <div class="clearfix"></div>
