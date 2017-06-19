@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017/6 | Cherry</title>
+  <title>python网络数据采集笔记二 | Cherry</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Cherry">
-<meta property="og:url" content="http://yoursite.com/archives/2017/06/index.html">
+  <meta name="description" content="第三章 开始采集1. from urllib.request import urlopen from bs4 import BeautifulSoup html=urlopen(&amp;quot;http://en.wikipedia.org/wiki/Kevin_Bacon&amp;quot;) bsObj=BeautifulSoup(html) for link in bsObj.findAll(&amp;quot">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python网络数据采集笔记二">
+<meta property="og:url" content="http://yoursite.com/2017/06/19/python网络数据采集笔记二/index.html">
 <meta property="og:site_name" content="Cherry">
+<meta property="og:description" content="第三章 开始采集1. from urllib.request import urlopen from bs4 import BeautifulSoup html=urlopen(&amp;quot;http://en.wikipedia.org/wiki/Kevin_Bacon&amp;quot;) bsObj=BeautifulSoup(html) for link in bsObj.findAll(&amp;quot">
+<meta property="og:updated_time" content="2017-06-19T06:33:22.224Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cherry">
+<meta name="twitter:title" content="python网络数据采集笔记二">
+<meta name="twitter:description" content="第三章 开始采集1. from urllib.request import urlopen from bs4 import BeautifulSoup html=urlopen(&amp;quot;http://en.wikipedia.org/wiki/Kevin_Bacon&amp;quot;) bsObj=BeautifulSoup(html) for link in bsObj.findAll(&amp;quot">
   
     <link rel="alternative" href="/atom.xml" title="Cherry" type="application/atom+xml">
   
@@ -149,36 +154,182 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="n-python网络数据采集笔记二" class="article article-type-n " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      python网络数据采集笔记二
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-n">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/19/python网络数据采集笔记二/" class="archive-article-date">
+
+        
+        <a href="/2017/06/19/python网络数据采集笔记二/" class="archive-article-date">
   	<time datetime="2017-06-19T06:32:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-19</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/19/python网络数据采集笔记二/">python网络数据采集笔记二</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="第三章-开始采集"><a href="#第三章-开始采集" class="headerlink" title="第三章 开始采集"></a>第三章 开始采集</h2><p>1.</p>
+<pre><code>from urllib.request import urlopen
+from bs4 import BeautifulSoup
+html=urlopen(&quot;http://en.wikipedia.org/wiki/Kevin_Bacon&quot;)
+bsObj=BeautifulSoup(html)
+for link in bsObj.findAll(&quot;a&quot;):
+    if &apos;href&apos; in link.attrs:
+        print(link.attrs[&apos;href&apos;])
+</code></pre><p>//都在id是bodyContent的div标签里，URL不含分号，URL链接以/wiki/开头<br><a id="more"></a><br>2.？？？</p>
+<pre><code>from urllib.request import urlopen
+ from bs4 import BeautifulSoup
+ import datetime
+ import random
+ import re
 
-        <div class="article-info info-on-right">
-          
+ random.seed(datetime.datetime.now())
+ def getLinks(articleUrl):
+     html=urlopen(&quot;http://en.wikipedia.org&quot;+articleUrl)
+     bsObj=BeautifulSoup(html)
+     return bsObj.find(&quot;div&quot;,{&quot;bodyContent&quot;}).findAll(&quot;a&quot;,href=re.compile(&quot;^(/wiki/)((?!:).)*$&quot;))
+ links=getLinks(&quot;/wiki/Kevin_Bacon&quot;)
+ while len(links)&gt;0:
+     newArticle=links[random.radint(0,len(links)-1)].attrs[&quot;href&quot;]
+     print(newArticle)
+     links=getLinks(newArticle)
+</code></pre><p>3.链接去重</p>
+<pre><code>from urllib.request import urlopen
+from bs4 import BeautifulSoup
+import re
+
+pages=set()
+def getLinks(pageUrl):
+    global pages
+    html=urlopen(&quot;http://en.wikipedia.org&quot;+pageUrl)
+    bsObj=BeautifulSoup(html)
+    for link in bsObj.findAll(&quot;a&quot;,href=re.compile(&quot;^(/wiki/)&quot;)):
+        if &apos;href&apos;in link.attrs:
+            if link.attrs[&apos;href&apos;]not in pages:
+                newPage=link.attrs[&apos;href&apos;]
+                print(newPage)
+                pages.add(newPage)
+                getLinks(newPage)
+getLinks(&quot;&quot;)
+</code></pre><p>4.python默认递归限制是1000次。</p>
+<pre><code>from urllib.request import urlopen
+from bs4 import BeautifulSoup
+import re
+import datetime
+import random
+
+pages=set()
+random.seed(datetime.datetime.now())
+
+def getInternalLinks(bsObj,includeUrl):
+    internalLinks=[]
+    for link in bsObj.findAll(&quot;a&quot;,href=re.compile(&quot;^(/|.*&quot;+includeUrl+&quot;)&quot;)):
+        if link.attrs[&apos;href&apos;]is not None:
+            if link.attrs[&apos;href&apos;]not in internalLinks:
+                internalLinks.append(link.attrs[&apos;href&apos;])
+    return internalLinks
+
+def getExternalLinks(bsObj,excludeUrl):
+    externalLinks=[]
+    for link in bsObj.findAll(&quot;a&quot;,href=re.compile(&quot;^(http|www)((?!&quot;+excludeUrl+&quot;).)*$&quot;)):
+            if link.attrs[&apos;href&apos;]is not None:
+                if link.attrs[&apos;href&apos;]not in externalLinks:
+                    externalLinks.append(link.attrs[&apos;href&apos;])
+    return externalLinks
+def splitAddress(address):
+    addressParts=address.replace(&quot;http://&quot;,&quot;&quot;).split(&quot;/&quot;)
+    return addressParts
+def getRandomExternalLink(startingPage):
+    html=urlopen(startingPage)
+    bsObj=BeautifulSoup(html)
+    externalLinks=getExternalLinks(bsObj,splitAddress(startingPage)[0])
+    if len(externalLinks)==0:
+        internalLinks=getInternalLinks(startingPage)
+        return getNextExternalLink(internalLinks[random.randint(0,len(internalLinks)-1)])
+    else:
+        return externalLinks[random.randint(0,len(externalLinks)-1)]
+
+def followExternalOnly(startingSite):
+    externalLink=getRandomExternalLink(&quot;http://oreilly.com&quot;)
+    print(&quot;随机外链是：&quot;+externalLink)
+    followExternalOnly(externalLink)
+
+followExternalOnly(&quot;http://ireilly.com&quot;)
+</code></pre><p>要做检查语句啊少年！</p>
+<p>6.用scrapy采集P40</p>
+<p> <a href="http://www.open-open.com/lib/view/open1383291459613.html" target="_blank" rel="external">windows环境下scrapy框架的搭建</a></p>
+<p> <a href="http://www.cnblogs.com/rwxwsblog/p/4557123.html" target="_blank" rel="external">虚拟机Linux环境下scrapy框架的搭建</a></p>
+<p>  <a href="https://pypi.python.org/simple/twisted/" target="_blank" rel="external">twisted</a><br>  <a href="https://pypi.python.org/simple/pyopenssl/" target="_blank" rel="external">pyopenssl</a></p>
+<p> items.py内容</p>
+<pre><code> # -*- coding: utf-8 -*-
+
+# Define here the models for your scraped items
+#
+# See documentation in:
+# http://doc.scrapy.org/en/latest/topics/items.html
+
+from scrapy import Item,Field
+
+
+class Article(Item):
+    # define the fields for your item here like:
+    # name = scrapy.Field()
+    title=Field()
+</code></pre><p>article.py内容</p>
+<pre><code>from scrapy.selector import Selector
+from scrapy import Spider
+from wikiSpider.items import Article
+
+class ArticleSpider(Spider):
+    name=&quot;article&quot;
+    allowed_domains=[&quot;en.wikipedia.org&quot;]
+    start_urls=[&quot;http://en.wikipedia.org/wiki/Main_Page&quot;,&quot;http://en.wikipedia.org/wiki/Python_%28programming_language%29&quot;]
+
+    def parse(self,response):
+        item=Article()
+        title=response.xpath(&apos;//h1/text()&apos;)[0].extract()
+        print(&quot;Title is:&quot;+title)
+        item[&apos;title&apos;]=title
+        return item
+</code></pre><p>让scrapy在每个页面查找URL链接P40<br>创建scrapy项目用<code>scray startproject wikiSpider</code><br>使用爬虫<code>scrapy crawl article</code><br>7.scrapy日志处理<br>可以修改setting.py<br>LOG_LEVEL=’ERROR’<br>通过<code>scrapy crawl article -s LOG_FILE=wiki.log</code>输出到独立文件中。<br>8.不同输出格式</p>
+<pre><code>scrapy crawl article -o articles.csv -t csv
+scrapy crawl article -o articles.json -t json
+scray crawl article -o articles.xml -t xml
+</code></pre>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -190,443 +341,89 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/06/19/python网络数据采集笔记二/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/15/python网络数据采集笔记一/" class="archive-article-date">
-  	<time datetime="2017-06-14T17:28:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/15/python网络数据采集笔记一/">python网络信息数据采集笔记一</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-n">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/13/算法第四版笔记-一/" class="archive-article-date">
-  	<time datetime="2017-06-13T13:50:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/13/算法第四版笔记-一/">算法第四版笔记(一)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-n">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/12/算法导论笔记-一/" class="archive-article-date">
-  	<time datetime="2017-06-12T15:03:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/12/算法导论笔记-一/">算法导论笔记(一)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构与算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/12/mysql必知必会笔记/" class="archive-article-date">
-  	<time datetime="2017-06-12T09:26:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/12/mysql必知必会笔记/">mysql必知必会笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SQL</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/11/深入浅出统计学笔记-四/" class="archive-article-date">
-  	<time datetime="2017-06-11T10:54:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/11/深入浅出统计学笔记-四/">深入浅出统计学笔记(四)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-n">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/11/深入浅出统计学笔记-三/" class="archive-article-date">
-  	<time datetime="2017-06-10T17:09:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/11/深入浅出统计学笔记-三/">深入浅出统计学笔记(三)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/09/深入浅出统计学笔记-二/" class="archive-article-date">
-  	<time datetime="2017-06-09T15:48:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/09/深入浅出统计学笔记-二/">深入浅出统计学笔记(二)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/数学/" class="article-tag-list-link color3">数学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-n">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/06/深入浅出统计学笔记-一/" class="archive-article-date">
-  	<time datetime="2017-06-05T16:13:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/06/深入浅出统计学笔记-一/">深入浅出统计学笔记(一)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/数学/" class="article-tag-list-link color3">数学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-“cn">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/05/程序员的数学/" class="archive-article-date">
-  	<time datetime="2017-06-04T17:36:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/05/程序员的数学/">《程序员的数学》笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/数学/" class="article-tag-list-link color3">数学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-‘ew">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/01/儿童节快乐/" class="archive-article-date">
-  	<time datetime="2017-06-01T05:38:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/01/儿童节快乐/">儿童节快乐</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/默认分类/" class="article-tag-list-link color5">默认分类</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/06/15/python网络数据采集笔记一/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">python网络信息数据采集笔记一</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-    
+  
+
+  
 
 
           </div>
@@ -649,8 +446,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

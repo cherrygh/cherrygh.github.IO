@@ -16,7 +16,8 @@
 <meta property="og:site_name" content="Cherry">
 <meta property="og:description" content="第一章 初见网络爬虫1.">
 <meta property="og:image" content="http://wx3.sinaimg.cn/mw690/0060zpJSly1fgjz7kctuzj30ja0lxgsi.jpg">
-<meta property="og:updated_time" content="2017-06-14T17:29:21.765Z">
+<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/0060zpJSly1fglz09twr7j30mn0iw7a2.jpg">
+<meta property="og:updated_time" content="2017-06-19T06:31:00.440Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python网络信息数据采集笔记一">
 <meta name="twitter:description" content="第一章 初见网络爬虫1.">
@@ -197,8 +198,15 @@ if title==None:
 else:
     print(title)
 </code></pre><p>3.获取html代码时候，可能发生两种异常：<br>网页在服务器上不存在 返回HTTPError<br>服务器不存在 返回None对象<br>调用标签不存在，bs会返回none，但再调用none下的子标签，会发生AttributeError。</p>
-<h2 id="第二章-复杂HTML解析"><a href="#第二章-复杂HTML解析" class="headerlink" title="第二章 复杂HTML解析"></a>第二章 复杂HTML解析</h2><p>1.<br>    from urllib.request import urlopen<br>    from bs4 import BeautifulSoup<br>    html = urlopen (“<a href="http://pythonscraping.com/pages/warandpeace.html" target="_blank" rel="external">http://pythonscraping.com/pages/warandpeace.html</a>“)<br>    bs0bj=BeautifulSoup(html)<br>    nameList=bs0bj.findAll(“span”,{“class”:”green”})<br>    for name in nameList:<br>        print(name.get_text())</p>
-<p>get_text()会处理掉标签，一般放在最后<br>2.</p>
+<h2 id="第二章-复杂HTML解析"><a href="#第二章-复杂HTML解析" class="headerlink" title="第二章 复杂HTML解析"></a>第二章 复杂HTML解析</h2><p>1.</p>
+<pre><code>from urllib.request import urlopen
+from bs4 import BeautifulSoup
+html = urlopen (&quot;http://pythonscraping.com/pages/warandpeace.html&quot;)
+bs0bj=BeautifulSoup(html)
+nameList=bs0bj.findAll(&quot;span&quot;,{&quot;class&quot;:&quot;green&quot;})
+for name in nameList:
+    print(name.get_text())
+</code></pre><p>get_text()会处理掉标签，一般放在最后<br>2.</p>
 <pre><code>findAll(tag,attributes,recursive,text,limit,keywords)
 find(tag,attributes,recursive,text,keywords)
 </code></pre><p>recursive是一个布尔变量，默认为t，会查找标签的子标签。设为f的时候只查找文档的一级标签。</p>
@@ -212,6 +220,12 @@ bs0bj=BeautifulSoup(html)
 for sibling in bs0bj.find(&quot;table&quot;,{&quot;id&quot;:&quot;giftList&quot;}).tr.next_siblings:
     print(sibling)
 </code></pre><p>处理兄弟标签：任何对象不能把自己作为兄弟标签，因此选择标签行然后调用next_siblings可以选择表格中除了标题行外所有行。<br>处理子标签用children，处理后代标签用descendants，还有next_sibling，previous_sibling。</p>
+<p>5.正则表达式<br>aa*表示重复任意次a，包括0次，(d|)表示”后面跟着空格的d，或者只有一个空格”<br>[测试正则表达式][1]</p>
+<p>邮箱地址[A-Za-z0-9._+]+@[A-Za-z0-9]+.(com|org|edu|net)<br><img src="http://wx1.sinaimg.cn/mw690/0060zpJSly1fglz09twr7j30mn0iw7a2.jpg" alt=""></p>
+<pre><code>images=bsObj.findAll(&quot;img&quot;,{&quot;src&quot;:re.compile(&quot;\.\./img\/gifts\/img.*)})
+
+myImgTag.attrs[&quot;src&quot;]
+</code></pre><p>6.<code>soup.findAll(lambda tag:len(tag.attrs)==2)</code><br>bs允许我们把特定的函数类型当成findAll函数的参数，唯一的限制条件是这些函数必须把每个标签作为参数并且返回结果是布尔类型。</p>
 
       
 
@@ -315,6 +329,15 @@ for sibling in bs0bj.find(&quot;table&quot;,{&quot;id&quot;:&quot;giftList&quot;
 
   
 <nav id="article-nav">
+  
+    <a href="/2017/06/19/python网络数据采集笔记二/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          python网络数据采集笔记二
+        
+      </div>
+    </a>
   
   
     <a href="/2017/06/13/算法第四版笔记-一/" id="article-nav-older" class="article-nav-link-wrap">
