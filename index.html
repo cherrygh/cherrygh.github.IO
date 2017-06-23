@@ -151,6 +151,67 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="n-python网络数据采集笔记三" class="article article-type-n  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/24/python网络数据采集笔记三/">python网络数据采集笔记三</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/24/python网络数据采集笔记三/" class="archive-article-date">
+  	<time datetime="2017-06-23T16:00:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="第四章-使用API"><a href="#第四章-使用API" class="headerlink" title="第四章 使用API"></a>第四章 使用API</h2><p>1.程序猿可以用HTTP协议向API发起请求以获取某种信息，API会用XML或者JSON格式返回服务器响应的信息。<br>2.利用HTTP从网络服务获取信息有四种方式：GET,POST,PUT,DELETE。<br>
+        
+          <a class="article-more-a" href="/2017/06/24/python网络数据采集笔记三/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/24/python网络数据采集笔记三/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="n-谁说菜鸟不会数据分析二" class="article article-type-n  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -369,78 +430,9 @@
 
 
   
-    <article id="n-python网络数据采集笔记二" class="article article-type-n  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/19/python网络数据采集笔记二/">python网络数据采集笔记二</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/19/python网络数据采集笔记二/" class="archive-article-date">
-  	<time datetime="2017-06-19T06:32:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第三章-开始采集"><a href="#第三章-开始采集" class="headerlink" title="第三章 开始采集"></a>第三章 开始采集</h2><p>1.</p>
-<pre><code>from urllib.request import urlopen
-from bs4 import BeautifulSoup
-html=urlopen(&quot;http://en.wikipedia.org/wiki/Kevin_Bacon&quot;)
-bsObj=BeautifulSoup(html)
-for link in bsObj.findAll(&quot;a&quot;):
-    if &apos;href&apos; in link.attrs:
-        print(link.attrs[&apos;href&apos;])
-</code></pre><p>//都在id是bodyContent的div标签里，URL不含分号，URL链接以/wiki/开头<br>
-        
-          <a class="article-more-a" href="/2017/06/19/python网络数据采集笔记二/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/19/python网络数据采集笔记二/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -559,7 +551,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数学</a>
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -567,7 +559,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
+                <a href="javascript:void(0)" class="js-tag color3">数学</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -575,11 +567,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数据结构与算法</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color3">数据结构与算法</a>
               </li>
             
             <div class="clearfix"></div>

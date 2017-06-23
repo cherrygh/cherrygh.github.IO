@@ -6,22 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>深入浅出统计学笔记(三) | Cherry</title>
+  <title>python网络数据采集笔记三 | Cherry</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="十.统计抽样的运用1.简单随机抽样分为重复抽样和不重复抽样。2.简单随机样本有两种方法：抽签或者用随机编号（编号然后随机抽），分层抽样（层与层不同），整群抽样（群与群不同），系统抽样（按某种顺序列出总体名单，然后每K个单位进行一次调查，但如果总体存在某种循环，则会有偏倚）。">
-<meta name="keywords" content="数学">
+  <meta name="description" content="第四章 使用API1.程序猿可以用HTTP协议向API发起请求以获取某种信息，API会用XML或者JSON格式返回服务器响应的信息。2.利用HTTP从网络服务获取信息有四种方式：GET,POST,PUT,DELETE。">
+<meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深入浅出统计学笔记(三)">
-<meta property="og:url" content="http://yoursite.com/2017/06/11/深入浅出统计学笔记-三/index.html">
+<meta property="og:title" content="python网络数据采集笔记三">
+<meta property="og:url" content="http://yoursite.com/2017/06/24/python网络数据采集笔记三/index.html">
 <meta property="og:site_name" content="Cherry">
-<meta property="og:description" content="十.统计抽样的运用1.简单随机抽样分为重复抽样和不重复抽样。2.简单随机样本有两种方法：抽签或者用随机编号（编号然后随机抽），分层抽样（层与层不同），整群抽样（群与群不同），系统抽样（按某种顺序列出总体名单，然后每K个单位进行一次调查，但如果总体存在某种循环，则会有偏倚）。">
-<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/0060zpJSly1fggbclttznj30my0h7q7c.jpg">
-<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/0060zpJSly1fggf4b2dn9j30ne08otcl.jpg">
-<meta property="og:updated_time" content="2017-06-10T17:10:38.744Z">
+<meta property="og:description" content="第四章 使用API1.程序猿可以用HTTP协议向API发起请求以获取某种信息，API会用XML或者JSON格式返回服务器响应的信息。2.利用HTTP从网络服务获取信息有四种方式：GET,POST,PUT,DELETE。">
+<meta property="og:updated_time" content="2017-06-23T16:02:18.647Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深入浅出统计学笔记(三)">
-<meta name="twitter:description" content="十.统计抽样的运用1.简单随机抽样分为重复抽样和不重复抽样。2.简单随机样本有两种方法：抽签或者用随机编号（编号然后随机抽），分层抽样（层与层不同），整群抽样（群与群不同），系统抽样（按某种顺序列出总体名单，然后每K个单位进行一次调查，但如果总体存在某种循环，则会有偏倚）。">
-<meta name="twitter:image" content="http://wx4.sinaimg.cn/mw690/0060zpJSly1fggbclttznj30my0h7q7c.jpg">
+<meta name="twitter:title" content="python网络数据采集笔记三">
+<meta name="twitter:description" content="第四章 使用API1.程序猿可以用HTTP协议向API发起请求以获取某种信息，API会用XML或者JSON格式返回服务器响应的信息。2.利用HTTP从网络服务获取信息有四种方式：GET,POST,PUT,DELETE。">
   
     <link rel="alternative" href="/atom.xml" title="Cherry" type="application/atom+xml">
   
@@ -157,29 +154,150 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="n-深入浅出统计学笔记-三" class="article article-type-n " itemscope itemprop="blogPost">
+            <article id="n-python网络数据采集笔记三" class="article article-type-n " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      深入浅出统计学笔记(三)
+      python网络数据采集笔记三
     </h1>
   
 
         
-        <a href="/2017/06/11/深入浅出统计学笔记-三/" class="archive-article-date">
-  	<time datetime="2017-06-10T17:09:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-11</time>
+        <a href="/2017/06/24/python网络数据采集笔记三/" class="archive-article-date">
+  	<time datetime="2017-06-23T16:00:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="十-统计抽样的运用"><a href="#十-统计抽样的运用" class="headerlink" title="十.统计抽样的运用"></a>十.统计抽样的运用</h2><p>1.简单随机抽样分为重复抽样和不重复抽样。<br>2.简单随机样本有两种方法：抽签或者用随机编号（编号然后随机抽），分层抽样（层与层不同），整群抽样（群与群不同），系统抽样（按某种顺序列出总体名单，然后每K个单位进行一次调查，但如果总体存在某种循环，则会有偏倚）。<br><a id="more"></a></p>
-<h2 id="十一-总体和样本的估计"><a href="#十一-总体和样本的估计" class="headerlink" title="十一.总体和样本的估计"></a>十一.总体和样本的估计</h2><p>1.样本均值被称为总体均值的点估计量。$\mu$表示总体均值，$\overline X $拔表示样本均值。$\hat{\mu}$是点估计量.<br>2.总体方差估计量$\hat{\sigma^2}=\frac{\sum_(x-\overline x)^2} {n-1}$。<br>3.考虑从同一个总体中取得的所有大小为n的可能性样本，这些样本的比例组成分布，用$P_s<br>$表示样本比例随机变量。<br>$$E(P_s)=P$$<br>$$Var(P_s)=pq/n$$<br>p为总体比例，如果n&gt;30,则$P_s$符合正态分布，$P_s\backsim  N(p,pq/n)$使用这个公式需要连续性修正，1\2n。<br>4.取来自总体X的所有大小为n的可能样本，样本均值$E(\overline X)=\mu$<br>$Var(\overline X)=\frac{\sigma^2}{n}$<br>5.中心极限定理。如果X的样本很大，则$\overline X$的分布近似为正态分布。$\overline X \backsim N (\mu,\sigma^2/n)$</p>
-<h2 id="十二-置信区间的构建"><a href="#十二-置信区间的构建" class="headerlink" title="十二 置信区间的构建"></a>十二 置信区间的构建</h2><p>1.常见置信区间水平是95%。<br>2.步骤是先选择用于构建置信区间的总体统计量，接着求其抽样分布，最后求置信区间的置信上下限。<br>3.<img src="http://wx4.sinaimg.cn/mw690/0060zpJSly1fggbclttznj30my0h7q7c.jpg" alt=""><br>4.置信区间90%，c值1.64,95%，1.96,99%，2.58。<br>5.当样本很小时，$\overline X$符合t分布。v=n-1.v称为自由度，v越小，尾巴越大。<br>6.$$T=\frac{\overline X-\mu}{s/\sqrt{n}}$$<br>7.t分布<br><img src="http://wx2.sinaimg.cn/mw690/0060zpJSly1fggf4b2dn9j30ne08otcl.jpg" alt=""><br>8.t分布置信区间$(\overline x-t(v)\frac{s}{\sqrt n},\overline x+t(v)\frac{s}{\sqrt n})$.</p>
+        <h2 id="第四章-使用API"><a href="#第四章-使用API" class="headerlink" title="第四章 使用API"></a>第四章 使用API</h2><p>1.程序猿可以用HTTP协议向API发起请求以获取某种信息，API会用XML或者JSON格式返回服务器响应的信息。<br>2.利用HTTP从网络服务获取信息有四种方式：GET,POST,PUT,DELETE。<br><a id="more"></a><br>GET是在浏览器中输入网址浏览网站所做的事情，POST是”请求把信息保存到数据库里”，PUT请求用来更新一个对象或信息，DELETE用于删除一个对象。<br>3.API验证方法用类似令牌（token）的方式调用，每次API调用都会把令牌传递到服务器上，令牌通过服务器对用户名和密码的组合处理后生成。令牌除了在URL中传递，还会通过请求头里的cookie把用户信息传递给服务器</p>
+<pre><code>token=&quot;&lt;your api key&gt;&quot;
+webRequest=urllib.request.Request(&quot;http://myapi.com&quot;,headers={&quot;token&quot;:token})
+html=urlopen(webRequest)
+</code></pre><p>4.不同的api调用语法不相同，但是当使用get请求获得数据时，用URL路径描述要获得的数据范围，查询参数可以作为过滤器P65</p>
+<pre><code>import json
+from urllib.request import urlopen
+
+def getCountry(ipAddress):
+    response=urlopen(&quot;http://freegeoip.net/json/&quot;+ipAddress).read().decode(&apos;utf-8&apos;)
+    responseJson=json.loads(response)
+    return responseJson.get(&quot;country_code&quot;)
+print(getCountry(&quot;50.78.253.58&quot;))
+</code></pre><p>5.采集维基百科，编辑历史页面</p>
+<pre><code>from urllib.request import urlopen
+from bs4 import BeautifulSoup
+import datetime
+import random
+import re
+
+random.seed(datetime.datetime.now())
+def getLinks(articleUrl):
+    html=urlopen(&quot;http://en.wikipedia.org&quot;+articleUrl)
+    bsObj=BeautifulSoup(html)
+    return bsObj.find(&quot;div&quot;,{&quot;id&quot;:&quot;bodyContent&quot;}).findAll(&quot;a&quot;,href=re.compile(&quot;^(/wiki/)((?!:).)*$&quot;))
+
+def getHistoryIPs(pageUrl):
+    #编辑历史页面URL链接格式是：
+    #http://en.wolopedia.org/w/index.php?title=Title_in_URL&amp;action=history
+    pageUrl=pageUrl.replace(&quot;/wiki/&quot;,&quot;&quot;)
+    historyUrl=&quot;http://enwikipedia.org/w/index.php?title=&quot;+pageUrl+&quot;&amp;action=history&quot;
+    print(&quot;history url is :&quot;+historyUrl)
+    html=urlopen(historyUrl)
+    bsObj=BeautifulSoup(html)
+    #找出class属性是&quot;mw-anonuserlink&quot;的链接
+    #它们用ip地址代替用户名
+    ipAddresses=bsObj.findAll(&quot;a&quot;,{&quot;class&quot;:&quot;mw-anonuserlink&quot;})
+    addressList=set()
+    #python集合是无序的，不会储存重复值，列表迭代比集合快，但集合查找速度更快（基于哈希表结构，查询速度为O(1).）
+    for ipAddress in ipAddresses:
+        addressList.add(ipAddress.get_text())
+    return addressList
+
+links=getLinks(&quot;/wiki/Python_(programming_language)&quot;)
+
+while(len(links)&gt;0):
+    for link in links:
+        print(&quot;---------------&quot;)
+        historyIPs=getHistoryIPs(link.attrs[&apos;href&apos;])
+        for historyIPs in historyIPs:
+            print(historyIP)
+    newLink=links[random.randint(0,len(links)-1)].attrs[&quot;href&quot;]
+    links=getLinks(newLink)
+</code></pre><h2 id="第五章存储数据"><a href="#第五章存储数据" class="headerlink" title="第五章存储数据"></a>第五章存储数据</h2><p>1.</p>
+<pre><code>from urllib.request import urlretrieve
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+
+html=urlopen(&quot;http://www.pythonscraping.com&quot;)
+bsObj=BeautifulSoup(html,&quot;html5lib&quot;)
+imageLocation=bsObj.find(&quot;a&quot;,{&quot;id&quot;:&quot;logo&quot;}).find(&quot;img&quot;)[&quot;src&quot;]
+urlretrieve(imageLocation,&quot;logo.jpg&quot;)
+</code></pre><p>2.批量下载</p>
+<pre><code>import os
+from urllib.request import urlretrieve
+from urllib.request import urlopen
+from bs4 import  BeautifulSoup
+
+downloadDirectory=&quot;downloaded&quot;
+baseUrl=&quot;http://pythonscraping.com&quot;
+
+def getAbsoluteURL(baseUrl,source):
+    if source.startswith(&quot;http://www.&quot;):
+        url=&quot;http://&quot;+source[11:]
+    elif source.startswith(&quot;http://&quot;):
+        url=source
+    elif source.startswith(&quot;www.&quot;):
+        url=source[4:]
+        url=&quot;http://&quot;+source
+    else:
+        url=baseUrl+&quot;/&quot;+source
+    if baseUrl not in url:
+        return None
+    return url
+
+def getDownloadPath(baseUrl,absoluteUrl,downloadDirectory):
+    path=absoluteUrl.replace(&quot;www.&quot;,&quot;&quot;)
+    path=path.replace(baseUrl,&quot;&quot;)
+    path=downloadDirectory+path
+    directory=os.path.dirname(path)
+
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+
+    return path
+
+html=urlopen(&quot;http://www.pythonscraping.com&quot;)
+bsObj=BeautifulSoup(html,&quot;html5lib&quot;)
+downloadList=bsObj.findAll(src=True)
+
+for download in downloadList:
+    fileUrl=getAbsoluteURL(baseUrl,download[&quot;src&quot;])
+    if fileUrl is not None:
+        print(fileUrl)
+
+urlretrieve(fileUrl,getDownloadPath(baseUrl,fileUrl,downloadDirectory))
+</code></pre><p>  3.CSV</p>
+<pre><code>import csv
+csvFile=open(&quot;../files/test.csv&quot;,&apos;w+&apos;)
+try:
+    writer=csv.writer(csvFile)
+    writer.writerow((&apos;number&apos;,&apos;number plus 2&apos;,&apos;number times 2&apos;))
+    for i inrange(10):
+        writer.writerow((i,i+2,i*2))
+finally:
+    csvFile.close()
+
+如果只需一次把html表格转化成csv，复制粘贴用excel另存为csv格式。
+</code></pre><p>4.mysql<br> 和数据库不同，mysql数据表必须至少有一列，否则不能创建。</p>
+<pre><code>USE scraping;
+CREATE TABLE pages(id BIGINT(7)NOT NULL AUTO_INCREMENT,title VARCHAR(200),content VARCHAR(10000)，created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,PRIMARY KEY(id));
+
+字段定义三部分，名称，数据类型，其他可选属性
+</code></pre><p>5.用DESCRIBE pages查看数据表的结构。</p>
 
       
 
@@ -214,7 +332,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数学</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
         		</li>
       		
 		</ul>
@@ -270,7 +388,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/06/11/深入浅出统计学笔记-三/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/06/24/python网络数据采集笔记三/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -284,18 +402,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/06/11/深入浅出统计学笔记-四/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          深入浅出统计学笔记(四)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/06/09/深入浅出统计学笔记-二/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">深入浅出统计学笔记(二)</div>
+    <a href="/2017/06/22/谁说菜鸟不会数据分析二/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">谁说菜鸟不会数据分析二</div>
       <i class="icon-circle-right"></i>
     </a>
   
