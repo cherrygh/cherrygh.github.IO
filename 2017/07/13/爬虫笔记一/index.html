@@ -6,21 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>儿童节快乐 | Cherry</title>
+  <title>爬虫笔记一 | Cherry</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="你也要来玩嘛，很好玩的哦~">
-<meta name="keywords" content="随笔">
+  <meta name="description" content="1.URL的格式由三部分组成：①第一部分是协议(或称为服务方式)。②第二部分是存有该资源的主机IP地址(有时也包括端口号)。③第三部分是主机资源的具体地址，如目录和文件名等。">
+<meta name="keywords" content="爬虫">
 <meta property="og:type" content="article">
-<meta property="og:title" content="儿童节快乐">
-<meta property="og:url" content="http://yoursite.com/2017/06/01/儿童节快乐/index.html">
+<meta property="og:title" content="爬虫笔记一">
+<meta property="og:url" content="http://yoursite.com/2017/07/13/爬虫笔记一/index.html">
 <meta property="og:site_name" content="Cherry">
-<meta property="og:description" content="你也要来玩嘛，很好玩的哦~">
-<meta property="og:image" content="http://i1.piimg.com/519918/e249ec27bd896fa6.png">
-<meta property="og:updated_time" content="2017-06-04T17:42:07.531Z">
+<meta property="og:description" content="1.URL的格式由三部分组成：①第一部分是协议(或称为服务方式)。②第二部分是存有该资源的主机IP地址(有时也包括端口号)。③第三部分是主机资源的具体地址，如目录和文件名等。">
+<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/0060zpJSly1fhdu7ksz2yj30m40jftaj.jpg">
+<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/0060zpJSly1fhe19o8ys9j30m30jeacy.jpg">
+<meta property="og:updated_time" content="2017-07-12T16:10:48.172Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="儿童节快乐">
-<meta name="twitter:description" content="你也要来玩嘛，很好玩的哦~">
-<meta name="twitter:image" content="http://i1.piimg.com/519918/e249ec27bd896fa6.png">
+<meta name="twitter:title" content="爬虫笔记一">
+<meta name="twitter:description" content="1.URL的格式由三部分组成：①第一部分是协议(或称为服务方式)。②第二部分是存有该资源的主机IP地址(有时也包括端口号)。③第三部分是主机资源的具体地址，如目录和文件名等。">
+<meta name="twitter:image" content="http://wx1.sinaimg.cn/mw690/0060zpJSly1fhdu7ksz2yj30m40jftaj.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Cherry" type="application/atom+xml">
   
@@ -156,27 +157,248 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="‘ew-儿童节快乐" class="article article-type-‘ew " itemscope itemprop="blogPost">
+            <article id="post-爬虫笔记一" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      儿童节快乐
+      爬虫笔记一
     </h1>
   
 
         
-        <a href="/2017/06/01/儿童节快乐/" class="archive-article-date">
-  	<time datetime="2017-06-01T05:38:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-01</time>
+        <a href="/2017/07/13/爬虫笔记一/" class="archive-article-date">
+  	<time datetime="2017-07-12T16:09:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="http://i1.piimg.com/519918/e249ec27bd896fa6.png" alt="儿童节快乐" title="儿童节快乐"><br>你也要来玩嘛，很好玩的哦~<br><a id="more"></a></p>
+        <p>1.URL的格式由三部分组成：<br>①第一部分是协议(或称为服务方式)。<br>②第二部分是存有该资源的主机IP地址(有时也包括端口号)。<br>③第三部分是主机资源的具体地址，如目录和文件名等。<br><a id="more"></a><br>2.urlopen(url, data, timeout)<br>第一个参数url即为URL，第二个参数data是访问URL时要传送的数据，第三个timeout是设置超时时间。<br>第二三个参数是可以不传送的，data默认为空None，timeout默认为 socket._GLOBAL_DEFAULT_TIMEOUT<br>第一个参数URL是必须要传送的，在这个例子里面我们传送了百度的URL，执行urlopen方法之后，返回一个response对象，返回信息便保存在这里面。<br>3.GET是直接以链接形式访问，链接中包含所有参数，POST则不会在网址上显示所有的参数<br>4.POST方式</p>
+<pre><code>import urllib
+import urllib2
+
+values = {&quot;username&quot;:&quot;1016903103@qq.com&quot;,&quot;password&quot;:&quot;XXXX&quot;}
+data = urllib.urlencode(values) 
+url = &quot;https://passport.csdn.net/account/login?from=http://my.csdn.net/my/mycsdn&quot;
+request = urllib2.Request(url,data)
+response = urllib2.urlopen(request)
+print response.read()
+</code></pre><p>5.POST</p>
+<pre><code>import urllib
+import urllib2
+
+values = {}
+values[&apos;username&apos;] = &quot;1016903103@qq.com&quot;
+values[&apos;password&apos;] = &quot;XXXX&quot;
+data = urllib.urlencode(values) 
+url = &quot;http://passport.csdn.net/account/login?from=http://my.csdn.net/my/mycsdn&quot;
+request = urllib2.Request(url,data)
+response = urllib2.urlopen(request)
+print response.read()
+</code></pre><p>GET</p>
+<pre><code>import urllib
+import urllib2
+
+values = {}
+values[&apos;username&apos;] = &quot;1016903103@qq.com&quot;
+values[&apos;password&apos;] = &quot;XXXX&quot;
+data = urllib.urlencode(values) 
+url = &quot;http://passport.csdn.net/account/login?from=http://my.csdn.net/my/mycsdn&quot;
+request = urllib2.Request(url,data)
+response = urllib2.urlopen(request)
+print response.read()
+</code></pre><h2 id="4-Python爬虫入门四之Urllib库的高级用法"><a href="#4-Python爬虫入门四之Urllib库的高级用法" class="headerlink" title="4.Python爬虫入门四之Urllib库的高级用法"></a>4.Python爬虫入门四之Urllib库的高级用法</h2><p>1.设置headers</p>
+<pre><code>import urllib  
+import urllib2  
+
+url = &apos;http://www.server.com/login&apos;
+user_agent = &apos;Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)&apos;  
+values = {&apos;username&apos; : &apos;cqc&apos;,  &apos;password&apos; : &apos;XXXX&apos; }  
+headers = { &apos;User-Agent&apos; : user_agent }  
+data = urllib.urlencode(values)  
+request = urllib2.Request(url, data, headers)  
+response = urllib2.urlopen(request)  
+page = response.read()
+</code></pre><p>2.<a href="http://blog.csdn.net/xiao_tommy/article/details/53186201" target="_blank" rel="external">关于防盗链的描述</a></p>
+<p>3.User-Agent : 有些服务器或 Proxy 会通过该值来判断是否是浏览器发出的请求 Content-Type : 在使用 REST    接口时，服务器会检查该值，用来确定 HTTP Body 中的内容该怎样解析。 application/xml ： 在 XML RPC，如     RESTful/SOAP 调用时使用 application/json ： 在 JSON RPC 调用时使用          application/x-www-form-urlencoded ： 浏览器提交 Web 表单时使用 在使用服务器提供的 RESTful    或 SOAP 服务时， Content-Type 设置错误会导致服务器拒绝服务</p>
+<p>4.代理的设置</p>
+<pre><code>import urllib2
+enable_proxy=True
+proxy_handler=urllib2.ProxyHandler({&quot;http&quot;:&apos;http://some-proxy.com:8080&apos;})
+null_proxy_handler=urllib2.ProxyHandler({})
+if enable_proxy:
+    opener=urllib2.build_opener(proxy_handler)
+else:
+    opener=urllib2.build_opener(null_proxy_handler)
+urllib2.install_opener(opener)
+</code></pre><p>5.PUT通常指定了资源的存放位置，而POST则没有，POST的数据存放位置由服务器自己决定</p>
+<h2 id="5-Python爬虫入门五之URLError异常处理"><a href="#5-Python爬虫入门五之URLError异常处理" class="headerlink" title="5.Python爬虫入门五之URLError异常处理"></a>5.Python爬虫入门五之URLError异常处理</h2><p>1.URLError 产生的原因：网络无法连接，连接不到特定的服务器，服务器不存在。</p>
+<pre><code>import urllib2
+
+requset = urllib2.Request(&apos;http://www.xxxxx.com&apos;)
+try:
+    urllib2.urlopen(request)
+except urllib2.URLError, e:
+    print e.reason
+</code></pre><p>HTTPError是URLError的子类，在你利用urlopen方法发出一个请求时，服务器上都会对应一个应答对象response，其中它包含一个数字”状态码”。举个例子，假如response是一个”重定向”，需定位到别的地址获取文档，urllib2将对此进行处理。</p>
+<p><strong>100：继续  客户端应当继续发送请求。客户端应当继续发送请求的剩余部分，或者如果请求已经完成，忽略这个响应。<br>101： 转换协议  在发送完这个响应最后的空行后，服务器将会切换到在Upgrade 消息头中定义的那些协议。只有在切换新的协议更有好处的时候才应该采取类似措施。<br>102：继续处理   由WebDAV（RFC 2518）扩展的状态码，代表处理将被继续执行。<br>200：请求成功      处理方式：获得响应的内容，进行处理<br>201：请求完成，结果是创建了新资源。新创建资源的URI可在响应的实体中得到    处理方式：爬虫中不会遇到<br>202：请求被接受，但处理尚未完成    处理方式：阻塞等待<br>204：服务器端已经实现了请求，但是没有返回新的信 息。如果客户是用户代理，则无须为此更新自身的文档视图。    处理方式：丢弃<br>300：该状态码不被HTTP/1.0的应用程序直接使用， 只是作为3XX类型回应的默认解释。存在多个可用的被请求资源。    处理方式：若程序中能够处理，则进行进一步处理，如果程序中不能处理，则丢弃<br>301：请求到的资源都会分配一个永久的URL，这样就可以在将来通过该URL来访问此资源    处理方式：重定向到分配的URL<br>302：请求到的资源在一个不同的URL处临时保存     处理方式：重定向到临时的URL<br>304：请求的资源未更新     处理方式：丢弃<br>400：非法请求     处理方式：丢弃<br>401：未授权     处理方式：丢弃<br>403：禁止     处理方式：丢弃<br>404：没有找到     处理方式：丢弃<br>500：服务器内部错误  服务器遇到了一个未曾预料的状况，导致了它无法完成对请求的处理。一般来说，这个问题都会在服务器端的源代码出现错误时出现。<br>501：服务器无法识别  服务器不支持当前请求所需要的某个功能。当服务器无法识别请求的方法，并且无法支持其对任何资源的请求。<br>502：错误网关  作为网关或者代理工作的服务器尝试执行请求时，从上游服务器接收到无效的响应。<br>503：服务出错   由于临时的服务器维护或者过载，服务器当前无法处理请求。这个状况是临时的，并且将在一段时间以后恢复。</strong></p>
+<p>2.HTTPError的父类是URLError</p>
+<pre><code>import urllib2
+
+req = urllib2.Request(&apos;http://blog.csdn.net/cqcre&apos;)
+try:
+    urllib2.urlopen(req)
+except urllib2.HTTPError, e:
+    print e.code
+except urllib2.URLError, e:
+    print e.reason
+else:
+    print &quot;OK&quot;
+</code></pre><p>3.如果捕获到了HTTPError，则输出code，不会再处理URLError异常。如果发生的不是HTTPError，则会去捕获URLError异常，输出错误原因。</p>
+<h2 id="6-Python爬虫入门六之Cookie的使用"><a href="#6-Python爬虫入门六之Cookie的使用" class="headerlink" title="6.Python爬虫入门六之Cookie的使用"></a>6.Python爬虫入门六之Cookie的使用</h2><p>1.cookie是网站为了辨别用户身份，进行session跟踪而储存在用户本地终端上的数据<br>2.urlopen是特殊的opener。<br>3.cookielib模块提供可存储cookie的对象，以便于与urllib2模块配合使用来访问Internet资源。<br>4.打印cookie</p>
+<pre><code>import urllib2
+import cookielib
+
+cookie=cookielib.CookieJar()
+handler=urllib2.HTTPCookieProcessor(cookie)
+opener=urllib2.build_opener(handler)
+response=opener.open(&apos;http://www.baidu.com&apos;)
+for item in cookie:
+    print &apos;Name =&apos;+item.name
+    print &apos;Value =&apos;+item.value
+</code></pre><p>5.保存cookie到文件</p>
+<pre><code>import cookielib
+import urllib2
+filename=&apos;cookie.txt&apos;
+cookie=cookielib.MozillaCookieJar(filename)
+handler=urllib2.HTTPCookieProcessor(cookie)
+opener=urllib2.build_opener(handler)
+response=opener.open(&quot;http://www.baidu.com&quot;)
+cookie.save(ignore_discard=True,ignore_expires=True)
+</code></pre><p>6.读取cookie</p>
+<pre><code>import cookielib
+import urllib2
+
+#创建MozillaCookieJar实例对象
+cookie = cookielib.MozillaCookieJar()
+#从文件中读取cookie内容到变量
+cookie.load(&apos;cookie.txt&apos;, ignore_discard=True, ignore_expires=True)
+#创建请求的request
+req = urllib2.Request(&quot;http://www.baidu.com&quot;)
+#利用urllib2的build_opener方法创建一个opener
+opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cookie))
+response = opener.open(req)
+print response.read()
+</code></pre><p>7.保存cookie到文件</p>
+<pre><code>import cookielib
+import urllib2
+filename=&apos;cookie.txt&apos;
+cookie=cookielib.MozillaCookieJar(filename)
+handler=urllib2.HTTPCookieProcessor(cookie)
+opener=urllib2.build_opener(handler)
+response=opener.open(&quot;http://www.baidu.com&quot;)
+cookie.save(ignore_discard=True,ignore_expires=True)
+</code></pre><p>8.利用cookie模拟网站登录</p>
+<pre><code>import urllib
+import urllib2
+import cookielib
+</code></pre><p>、<br>    filename=’cookie.txt’<br>    cookie=cookielib.MozillaCookieJar(filename)<br>    opener=urllib2.build_opener(urllib2.HTTPCookieProcessor(cookie))<br>    postdata=urllib.urlencode({<br>        ‘stuid’:’201200131012’,<br>        ‘pwd’:’23342321’<br>    })<br>    loginUrl=’<a href="http://jwxt.sdu.edu.cn:7890/pls/wwwbks/bks_login2.login" target="_blank" rel="external">http://jwxt.sdu.edu.cn:7890/pls/wwwbks/bks_login2.login</a>‘<br>    result=opener.open(loginUrl,postdata)<br>    cookie.save(ignore_discard=True,ignore_expires=True)<br>    gradeUrl=’<a href="http://jwxt.sdu.edu.cn:7890/pls/wwwbks/bkscjcx.curscopre" target="_blank" rel="external">http://jwxt.sdu.edu.cn:7890/pls/wwwbks/bkscjcx.curscopre</a>‘<br>    result=opener.open(gradeUrl)<br>    print result.read()</p>
+<h2 id="7-Python爬虫入门七之正则表达式"><a href="#7-Python爬虫入门七之正则表达式" class="headerlink" title="7.Python爬虫入门七之正则表达式"></a>7.Python爬虫入门七之正则表达式</h2><p>1.<img src="http://wx1.sinaimg.cn/mw690/0060zpJSly1fhdu7ksz2yj30m40jftaj.jpg" alt=""><br>  <img src="http://wx3.sinaimg.cn/mw690/0060zpJSly1fhe19o8ys9j30m30jeacy.jpg" alt=""><br>2.python re模块</p>
+<pre><code>re.compile(string[,flag])
+re.match(pattern,string[,flag])
+re.search(parttern,string[,maxsplit])
+re.findall(pattern,string[,flags])
+re.finditer(pattern,string[,flags])
+re.sub(pattern,repl,string[,count])
+re.subn(pattern,repl,string[,count])
+</code></pre><p>3.</p>
+<pre><code>__author__ = &apos;CQC&apos;
+# -*- coding: utf-8 -*-
+
+#导入re模块
+import re
+
+# 将正则表达式编译成Pattern对象，注意hello前面的r的意思是“原生字符串”
+pattern = re.compile(r&apos;hello&apos;)
+
+# 使用re.match匹配文本，获得匹配结果，无法匹配时将返回None
+result1 = re.match(pattern,&apos;hello&apos;)
+result2 = re.match(pattern,&apos;helloo CQC!&apos;)
+result3 = re.match(pattern,&apos;helo CQC!&apos;)
+result4 = re.match(pattern,&apos;hello CQC!&apos;)
+
+#如果1匹配成功
+if result1:
+    # 使用Match获得分组信息
+    print result1.group()
+else:
+    print &apos;1匹配失败！&apos;
+
+
+#如果2匹配成功
+if result2:
+    # 使用Match获得分组信息
+    print result2.group()
+else:
+    print &apos;2匹配失败！&apos;
+
+
+#如果3匹配成功
+if result3:
+    # 使用Match获得分组信息
+    print result3.group()
+else:
+    print &apos;3匹配失败！&apos;
+
+#如果4匹配成功
+if result4:
+    # 使用Match获得分组信息
+    print result4.group()
+else:
+    print &apos;4匹配失败！&apos;
+</code></pre><p>4.match对象是一次匹配的结果，包含了很多关于此次匹配的信息，可以使用match提供的可读属性或者方法来获取这些信息。<br>5.属性：<br>1.string: 匹配时使用的文本。<br>2.re: 匹配时使用的Pattern对象。<br>3.pos: 文本中正则表达式开始搜索的索引。值与Pattern.match()和Pattern.seach()方法的同名参数相同。<br>4.endpos: 文本中正则表达式结束搜索的索引。值与Pattern.match()和Pattern.seach()方法的同名参数相同。<br>5.lastindex: 最后一个被捕获的分组在文本中的索引。如果没有被捕获的分组，将为None。<br>6.lastgroup: 最后一个被捕获的分组的别名。如果这个分组没有别名或者没有被捕获的分组，将为None。</p>
+<p>方法：<br>1.group([group1, …]):<br>获得一个或多个分组截获的字符串；指定多个参数时将以元组形式返回。group1可以使用编号也可以使用别名；编号0代表整个匹配的子串；不填写参数时，返回group(0)；没有截获字符串的组返回None；截获了多次的组返回最后一次截获的子串。<br>2.groups([default]):<br>以元组形式返回全部分组截获的字符串。相当于调用group(1,2,…last)。default表示没有截获字符串的组以这个值替代，默认为None。<br>3.groupdict([default]):<br>返回以有别名的组的别名为键、以该组截获的子串为值的字典，没有别名的组不包含在内。default含义同上。<br>4.start([group]):<br>返回指定的组截获的子串在string中的起始索引（子串第一个字符的索引）。group默认值为0。<br>5.end([group]):<br>返回指定的组截获的子串在string中的结束索引（子串最后一个字符的索引+1）。group默认值为0。<br>6.span([group]):<br>返回(start(group), end(group))。<br>7.expand(template):<br>将匹配到的分组代入template中然后返回。template中可以使用\id或\g、\g引用分组，但不能使用编号0。\id与\g是等价的；但\10将被认为是第10个分组，如果你想表达\1之后是字符’0’，只能使用\g0。</p>
+<pre><code># -*- coding: utf-8 -*-
+#一个简单的match实例
+
+import re
+# 匹配如下内容：单词+空格+单词+任意字符
+m = re.match(r&apos;(\w+) (\w+)(?P&lt;sign&gt;.*)&apos;, &apos;hello world!&apos;)
+
+print &quot;m.string:&quot;, m.string
+print &quot;m.re:&quot;, m.re
+print &quot;m.pos:&quot;, m.pos
+print &quot;m.endpos:&quot;, m.endpos
+print &quot;m.lastindex:&quot;, m.lastindex
+print &quot;m.lastgroup:&quot;, m.lastgroup
+print &quot;m.group():&quot;, m.group()
+print &quot;m.group(1,2):&quot;, m.group(1, 2)
+print &quot;m.groups():&quot;, m.groups()
+print &quot;m.groupdict():&quot;, m.groupdict()
+print &quot;m.start(2):&quot;, m.start(2)
+print &quot;m.end(2):&quot;, m.end(2)
+print &quot;m.span(2):&quot;, m.span(2)
+print r&quot;m.expand(r&apos;\g \g\g&apos;):&quot;, m.expand(r&apos;\2 \1\3&apos;)
+
+### output ###
+# m.string: hello world!
+# m.re: 
+# m.pos: 0
+# m.endpos: 12
+# m.lastindex: 3
+# m.lastgroup: sign
+# m.group(1,2): (&apos;hello&apos;, &apos;world&apos;)
+# m.groups(): (&apos;hello&apos;, &apos;world&apos;, &apos;!&apos;)
+# m.groupdict(): {&apos;sign&apos;: &apos;!&apos;}
+# m.start(2): 6
+# m.end(2): 11
+# m.span(2): (6, 11)
+# m.expand(r&apos;\2 \1\3&apos;): world hello!
+</code></pre><p><a href="http://www.cnblogs.com/chuxiuhong/p/5885073.html" target="_blank" rel="external">正则表达式</a></p>
 
       
 
@@ -211,24 +433,13 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
         		</li>
       		
 		</ul>
 	</div>
 
       
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/默认分类/" class="article-tag-list-link color5">默认分类</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
       
 
@@ -278,7 +489,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/06/01/儿童节快乐/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/13/爬虫笔记一/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -292,15 +503,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/06/05/程序员的数学/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          《程序员的数学》笔记
-        
-      </div>
-    </a>
   
+    <a href="/2017/06/24/6月24日随笔/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">6月24日随笔</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
