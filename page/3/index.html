@@ -151,6 +151,75 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="n-python网络数据采集笔记二" class="article article-type-n  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/19/python网络数据采集笔记二/">python网络数据采集笔记二</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/19/python网络数据采集笔记二/" class="archive-article-date">
+  	<time datetime="2017-06-19T06:32:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="第三章-开始采集"><a href="#第三章-开始采集" class="headerlink" title="第三章 开始采集"></a>第三章 开始采集</h2><p>1.</p>
+<pre><code>from urllib.request import urlopen
+from bs4 import BeautifulSoup
+html=urlopen(&quot;http://en.wikipedia.org/wiki/Kevin_Bacon&quot;)
+bsObj=BeautifulSoup(html)
+for link in bsObj.findAll(&quot;a&quot;):
+    if &apos;href&apos; in link.attrs:
+        print(link.attrs[&apos;href&apos;])
+</code></pre><p>//都在id是bodyContent的div标签里，URL不含分号，URL链接以/wiki/开头<br>
+        
+          <a class="article-more-a" href="/2017/06/19/python网络数据采集笔记二/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/19/python网络数据采集笔记二/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-python网络数据采集笔记一" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -423,70 +492,9 @@ else A[k]=R[j]
 
 
   
-    <article id="post-深入浅出统计学笔记-四" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/11/深入浅出统计学笔记-四/">深入浅出统计学笔记(四)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/11/深入浅出统计学笔记-四/" class="archive-article-date">
-  	<time datetime="2017-06-11T10:54:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="十三-假设检验的运用"><a href="#十三-假设检验的运用" class="headerlink" title="十三.假设检验的运用"></a>十三.假设检验的运用</h2><p>1.确定要进行检验的假设，选择检验统计量，确定用于做决策的拒绝域，求出检测统计量的p值，查看样本结果是否在拒绝域内，作出决策。<br>2.进行假设检验时，假定原假设为真，有足够证据反驳原假设，则拒绝原假设，接受备择假设。<br>3.为求拒绝域，需要先定下”显著性水平”。选择拒绝域的时候，还要考虑用单尾还是双尾进行检测。常用显著性水平为5%。用$\alpha$表示，表明你希望在观察结果的不可能程度达到多大时候拒绝$H_o$。<br>4.当备择假设&lt;时，使用左尾，备择假设&gt;时，使用右尾。<br>5.第一类错误:错误的拒绝了真原假设$H_o$；第二类错误：错误地接受假原假设。<br>
-        
-          <a class="article-more-a" href="/2017/06/11/深入浅出统计学笔记-四/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/11/深入浅出统计学笔记-四/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 
