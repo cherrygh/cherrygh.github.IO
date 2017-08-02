@@ -6,19 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>8月1日随笔 | Cherry</title>
+  <title>Cherry</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="七月份时间用在驾照的学习上，从7月5号开始到7月28日结束，可惜的是依然有一科没过。另外爬虫实战内容也大体整理过思路，数据结构继续看视频吧。8月1日到8月5日的任务就是把静觅的课程看完，接近20个章节，吃透是有点难的，但是要写出项目来啊。加油">
-<meta name="keywords" content="随笔">
+  <meta name="description" content="title: 爬虫笔记三date: 2017-08-02 11:19:25tags: [爬虫] —Beautiful Soup库的用法1.创建bs对象">
 <meta property="og:type" content="article">
-<meta property="og:title" content="8月1日随笔">
-<meta property="og:url" content="http://yoursite.com/2017/08/01/8月1日随笔/index.html">
+<meta property="og:title" content="Cherry">
+<meta property="og:url" content="http://yoursite.com/2017/08/02/爬虫笔记三/index.html">
 <meta property="og:site_name" content="Cherry">
-<meta property="og:description" content="七月份时间用在驾照的学习上，从7月5号开始到7月28日结束，可惜的是依然有一科没过。另外爬虫实战内容也大体整理过思路，数据结构继续看视频吧。8月1日到8月5日的任务就是把静觅的课程看完，接近20个章节，吃透是有点难的，但是要写出项目来啊。加油">
-<meta property="og:updated_time" content="2017-08-01T02:16:02.130Z">
+<meta property="og:description" content="title: 爬虫笔记三date: 2017-08-02 11:19:25tags: [爬虫] —Beautiful Soup库的用法1.创建bs对象">
+<meta property="og:updated_time" content="2017-08-02T07:24:07.183Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="8月1日随笔">
-<meta name="twitter:description" content="七月份时间用在驾照的学习上，从7月5号开始到7月28日结束，可惜的是依然有一科没过。另外爬虫实战内容也大体整理过思路，数据结构继续看视频吧。8月1日到8月5日的任务就是把静觅的课程看完，接近20个章节，吃透是有点难的，但是要写出项目来啊。加油">
+<meta name="twitter:title" content="Cherry">
+<meta name="twitter:description" content="title: 爬虫笔记三date: 2017-08-02 11:19:25tags: [爬虫] —Beautiful Soup库的用法1.创建bs对象">
   
     <link rel="alternative" href="/atom.xml" title="Cherry" type="application/atom+xml">
   
@@ -154,27 +153,180 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-8月1日随笔" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-爬虫笔记三" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      8月1日随笔
-    </h1>
-  
-
-        
-        <a href="/2017/08/01/8月1日随笔/" class="archive-article-date">
-  	<time datetime="2017-08-01T02:10:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-01</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>七月份时间用在驾照的学习上，从7月5号开始到7月28日结束，可惜的是依然有一科没过。<br>另外爬虫实战内容也大体整理过思路，数据结构继续看视频吧。<br>8月1日到8月5日的任务就是把静觅的课程看完，接近20个章节，吃透是有点难的，但是要写出项目来啊。加油</p>
+        <hr>
+<p>title: 爬虫笔记三<br>date: 2017-08-02 11:19:25<br>tags: [爬虫]</p>
+<h2 id="—Beautiful-Soup库的用法"><a href="#—Beautiful-Soup库的用法" class="headerlink" title="—Beautiful Soup库的用法"></a>—Beautiful Soup库的用法</h2><p>1.创建bs对象<br><a id="more"></a></p>
+<pre><code>from bs4 import BeautifulSoup
+
+soup=BeautifulSoup(html)
+soup=BeautifulSoup.open(&apos;index.html&apos;)
+print soup.prettify()
+</code></pre><p>2.tag有两个属性，name和attrs，soup的name是[document],其他的标签输出的为本身</p>
+<p>3.</p>
+<pre><code>#获取属性，输出为字典
+print soup.p.attrs
+#{&apos;class&apos;: [&apos;title&apos;], &apos;name&apos;: &apos;dromouse&apos;}
+
+#获取单个属性，输出为列表
+print soup.p[&apos;class&apos;]
+#[&apos;title&apos;]
+print soup.p.get(&apos;class&apos;)
+
+#修改
+soup.p[&apos;class&apos;]=&apos;newClass&apos;
+print soup.p
+
+#删除
+del soup.p[&apos;class&apos;]
+print soup.p
+
+#获取标签内部文字(唯一性)
+print soup.p.string
+
+#处理注释,用string输出注释时候还是会把注释符号去掉，注释的类型是comment
+if type(soup.a.string)==bs4.element.Comment:
+    print soup.a.string
+
+#把子节点以列表的方式输出
+print soup.head.contents
+
+#.children返回的是一个list生成器对象，可以遍历获得所有子节点
+print soup.head.children
+
+#.descendants获取子孙结点
+for child in soup.descendants:
+    print child
+
+#获取多个内容
+for string in soup.strings:
+    print(repr(string))
+    # u&quot;The Dormouse&apos;s story&quot;
+    # u&apos;\n\n&apos;
+    # u&quot;The Dormouse&apos;s story&quot;
+    # u&apos;\n\n&apos;
+    # u&apos;Once upon a time there were three little sisters; and their names were\n&apos;
+    # u&apos;Elsie&apos;
+    # u&apos;,\n&apos;
+    # u&apos;Lacie&apos;
+    # u&apos; and\n&apos;
+    # u&apos;Tillie&apos;
+    # u&apos;;\nand they lived at the bottom of a well.&apos;
+    # u&apos;\n\n&apos;
+    # u&apos;...&apos;
+    # u&apos;\n&apos;
+
+#去除空格，空行
+for string in soup.stripped_strings:
+    print(repr(string))
+    # u&quot;The Dormouse&apos;s story&quot;
+    # u&quot;The Dormouse&apos;s story&quot;
+    # u&apos;Once upon a time there were three little sisters; and their names were&apos;
+    # u&apos;Elsie&apos;
+    # u&apos;,&apos;
+    # u&apos;Lacie&apos;
+    # u&apos;and&apos;
+    # u&apos;Tillie&apos;
+    # u&apos;;\nand they lived at the bottom of a well.&apos;
+    # u&apos;...&apos;
+
+#父节点
+p=soup.p
+print p.parent.name
+content=soup.head.title.string
+print content.parent.name
+
+#兄弟节点,节点不存在的话，返回None，注意的是空白或者换行也可以被视作是一个节点
+print soup.p.next_sibling
+print soup.p.prev_sibling
+
+#全部兄弟节点
+for sibling in soup.a.next_siblings:
+    print(repr(sibling))
+
+#前后节点，在所有节点，不分层次
+.next_element .previous_element属性
+
+#所有前后节点
+.next_element .previous_elements
+</code></pre><p>4.</p>
+<pre><code>#搜索文档树，返回列表
+find_all(name,attrs,recursive,text,**kwargs)
+</code></pre><p>1）name参数</p>
+<pre><code>#A 字符串
+soup.find_all(&apos;b&apos;)
+#B 正则表达式
+import re
+for tag in soup.find_all(re.compile(&apos;^b&apos;)):
+    print(tag.name)
+#C 列表
+soup.find_all([&quot;a&quot;,&quot;b&quot;])
+#D true可以匹配任何值，查找到所有的tag，但是不会返回字符串节点
+for tag in soup.find_all(True):
+    print(tag.name)
+#传方法
+def has_class_but_no_id(tag):
+    return tag.has_attr(&quot;class&quot;)and not tag.has_attr(&apos;id&apos;)
+soup.find_all(has_class_but_no_id)
+</code></pre><p>2)keyword参数</p>
+<pre><code>soup.finde_all(id=&apos;link2&apos;)
+
+soup.find_all(href=re.compile(&quot;elsie&quot;))
+
+soup.find_all(href=re.compile(&quot;elsie&quot;),id=&apos;link1&apos;)
+
+#不能用class，因为class是python的关键词
+soup.find_all(&quot;a&quot;,class_=&quot;sister&quot;)
+
+#有些tag属性在搜索中不能使用，例如h5中的data-*属性，但是可以用attrs参数定义字典来搜索
+data_soup = BeautifulSoup(&apos;&lt;div data-foo=&quot;value&quot;&gt;foo!&lt;/div&gt;&apos;)
+data_soup.find_all(data-foo=&quot;value&quot;)
+# SyntaxError: keyword can&apos;t be an expression
+
+data-soup.find_all(attrs={&quot;data-foo&quot;:&quot;value&quot;})
+# [&lt;div data-foo=&quot;value&quot;&gt;foo!&lt;/div&gt;]
+</code></pre><p>3)text参数。接受字符串，正则，列表，True</p>
+<pre><code>soup.find_all(text=&quot;Elsie&quot;)
+# [u&apos;Elsie&apos;]
+
+soup.find_all(text=[&quot;Tillie&quot;, &quot;Elsie&quot;, &quot;Lacie&quot;])
+# [u&apos;Elsie&apos;, u&apos;Lacie&apos;, u&apos;Tillie&apos;]
+
+soup.find_all(text=re.compile(&quot;Dormouse&quot;))
+[u&quot;The Dormouse&apos;s story&quot;, u&quot;The Dormouse&apos;s story&quot;]
+</code></pre><p>4）limit参数<br>    soup.find_all(“a”,limit=2)</p>
+<p>5)recursive参数<br>find_all会检索tag的所有子孙节点，如果只想搜索tag的直接子节点，可以使用参数recursive=False</p>
+<p>（2）find( name , attrs , recursive , text , **kwargs )</p>
+<p>它与 find_all() 方法唯一的区别是 find_all() 方法的返回结果是值包含一个元素的列表,而 find() 方法直接返回结果</p>
+<p>（3）find_parents()  find_parent()</p>
+<p>find_all() 和 find() 只搜索当前节点的所有子节点,孙子节点等. find_parents() 和 find_parent() 用来搜索当前节点的父辈节点,搜索方法与普通tag的搜索方法相同,搜索文档搜索文档包含的内容</p>
+<p>（4）find_next_siblings()  find_next_sibling()</p>
+<p>这2个方法通过 .next_siblings 属性对当 tag 的所有后面解析的兄弟 tag 节点进行迭代, find_next_siblings() 方法返回所有符合条件的后面的兄弟节点,find_next_sibling() 只返回符合条件的后面的第一个tag节点</p>
+<p>（5）find_previous_siblings()  find_previous_sibling()</p>
+<p>这2个方法通过 .previous_siblings 属性对当前 tag 的前面解析的兄弟 tag 节点进行迭代, find_previous_siblings() 方法返回所有符合条件的前面的兄弟节点, find_previous_sibling() 方法返回第一个符合条件的前面的兄弟节点</p>
+<p>（6）find_all_next()  find_next()</p>
+<p>这2个方法通过 .next_elements 属性对当前 tag 的之后的 tag 和字符串进行迭代, find_all_next() 方法返回所有符合条件的节点, find_next() 方法返回第一个符合条件的节点</p>
+<p>（7）find_all_previous() 和 find_previous()</p>
+<p>这2个方法通过 .previous_elements 属性对当前节点前面的 tag 和字符串进行迭代, find_all_previous() 方法返回所有符合条件的节点, find_previous()方法返回第一个符合条件的节点</p>
+<p>5.<br>css选择器<br>soup.select()，返回类型是list</p>
+<pre><code>#通过标签名查找
+print soup.select(&apos;title&apos;)
+print soup.select(&apos;a&apos;)
+#通过类名查找
+print soup.select(&apos;.sisiter&apos;)
+#通过id名查找
+print soup.select(&apos;#link1&apos;)
+#组合查找
+print soup.select(&apos;p #link1&apos;)
+#直接子标签查找
+print soup.select(&quot;head&gt;title&quot;)
+</code></pre><p>6.属性查找,属性和标签属于同一节点，中间不能加空格<br>    print soup.select(‘a[class=”sisiter”])</p>
+<pre><code>print soup.select(&apos;a[href=&quot;http://example.com/elsie&quot;]&apos;)
+</code></pre><p>不在同一节点的用空格隔开，同一节点的不加空格</p>
 
       
 
@@ -204,17 +356,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -265,7 +406,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/08/01/8月1日随笔/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/08/02/爬虫笔记三/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -279,18 +420,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/08/02/爬虫笔记三/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/08/01/爬虫笔记二/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">爬虫笔记二</div>
+    <a href="/2017/08/01/8月1日随笔/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">8月1日随笔</div>
       <i class="icon-circle-right"></i>
     </a>
   
