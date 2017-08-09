@@ -151,6 +151,65 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="n-6月19日" class="article article-type-n  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/19/6月19日/">6月19日</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/19/6月19日/" class="archive-article-date">
+  	<time datetime="2017-06-19T15:08:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>嗯，今天踩了scrapy的坑~windows果然麻烦的很，intellij IDEA也配置好了，牛客网上刷了两道简单的算法题，刷题的时候果然是停不下来，希尔排序法一看还是懵比。喂~讲道理现在应该看数据分析的书的，但还是莫名其妙的想补计算机基础，啊强迫症犯的可以。抱抱自己。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/19/6月19日/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="n-算法第四版笔记-二" class="article article-type-n  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -390,94 +449,6 @@ for link in bsObj.findAll(&quot;a&quot;):
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/06/13/算法第四版笔记-一/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="n-算法导论笔记-一" class="article article-type-n  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/12/算法导论笔记-一/">算法导论笔记(一)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/12/算法导论笔记-一/" class="archive-article-date">
-  	<time datetime="2017-06-12T15:03:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第二章-算法基础"><a href="#第二章-算法基础" class="headerlink" title="第二章 算法基础"></a>第二章 算法基础</h2><p>2.1插入排序</p>
-<p>1.插入排序伪码（升序）</p>
-<pre><code>INSERTION-SORT(a)
-for j=2 to a.length
-    key=a[j]
-    i=j-1
-    while i&gt;0 and a[i]&gt;key
-        a[i+1]=a[i]
-        i=i-1
-    a[i+1]=key
-</code></pre><p>2.循环不变式<br>初始化：循环的第一次迭代之前为真。保持：如果循环的某次迭代之前它为真，那么下次迭代之前它仍为真。终止：循环终止时，不变式为我们提供一个有用性质，有助于证明算法是正确的。<br>3.伪代码约定<br>本书伪代码在for循环结束后，循环计数器的值是第一个超出for循环界限的那个值。<br>把表示一个数组或对象的变量看向是指向表示数组或对象的数据的一个指针，对于某个对象x的所有属性f，y=x导致y.f等于x.f。在赋值后，x，y指向相同的对象。<br>我们按值把参数传递给过程，被调用过程接受其参数自身的副本。如果它对某个参数赋值，调用过程看不到这种改变？？？<br>return语句将控制返回到调用过程的调用点<br>and和or是短路的，即x and y 如果x为f，不再求值y，类似x or y，当x求值为f，才会求值y。</p>
-<p>2.2分析算法</p>
-<p>1.想度量的是计算时间，用随机访问机（RAM）来作为我们的实现技术。<br>2.当一个for或者while循环按通常方式推出时，执行测试的次数比循环体内次数多1。<br>3.插入排序最坏情况运行时间$\theta(n^2)$。<br>4.分治算法<br>分解原问题为若干问题，解决这些子问题，递归的求解各子问题，合并这些子问题的解组成原问题的解。<br>归并排序算法符合分治模式。<br>5.分治法伪码描述</p>
-<pre><code>MERGEA(A,p,q,r)
-$n_1$=q-p+1
-$n_2$=r-q
-for i =1 to $n_1$
-    L[i]=A[p+i-1]
-for j=1 to $n_2$
-    R[j]=A[q+j]
-L[$n_1$+1]=$\infty$
-R[$n_1$+1]=$\infty$
-i=1
-j=1
-for k=p to r
-    if L[i]$\leg$R[j]
-    A[k]=L[i]
-    i=i+1
-else A[k]=R[j]
-    j=j+1
-</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构与算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/12/算法导论笔记-一/">展开全文 >></a>
         </p>
       
 
