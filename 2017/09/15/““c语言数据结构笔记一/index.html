@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>8月1日随笔 | Cherry</title>
+  <title>““c语言数据结构笔记一 | Cherry</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="七月份时间用在驾照的学习上，从7月5号开始到7月28日结束，可惜的是依然有一科没过。另外爬虫实战内容也大体整理过思路，数据结构继续看视频吧。8月1日到8月5日的任务就是把静觅的课程看完，接近20个章节，吃透是有点难的，但是要写出项目来啊。加油">
-<meta name="keywords" content="随笔">
+  <meta name="description" content="#线性表 结构体typedef struct  {   int a;     float b;     char c; }结构体名;  typedef struct 结构体名 {   int a;     float b;         char c;     struct 结构体名 *d;     }结构体名;">
+<meta name="keywords" content="数据结构">
 <meta property="og:type" content="article">
-<meta property="og:title" content="8月1日随笔">
-<meta property="og:url" content="http://yoursite.com/2017/08/01/8月1日随笔/index.html">
+<meta property="og:title" content="““c语言数据结构笔记一">
+<meta property="og:url" content="http://yoursite.com/2017/09/15/““c语言数据结构笔记一/index.html">
 <meta property="og:site_name" content="Cherry">
-<meta property="og:description" content="七月份时间用在驾照的学习上，从7月5号开始到7月28日结束，可惜的是依然有一科没过。另外爬虫实战内容也大体整理过思路，数据结构继续看视频吧。8月1日到8月5日的任务就是把静觅的课程看完，接近20个章节，吃透是有点难的，但是要写出项目来啊。加油">
-<meta property="og:updated_time" content="2017-08-01T02:16:02.130Z">
+<meta property="og:description" content="#线性表 结构体typedef struct  {   int a;     float b;     char c; }结构体名;  typedef struct 结构体名 {   int a;     float b;         char c;     struct 结构体名 *d;     }结构体名;">
+<meta property="og:updated_time" content="2017-09-15T09:07:52.649Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="8月1日随笔">
-<meta name="twitter:description" content="七月份时间用在驾照的学习上，从7月5号开始到7月28日结束，可惜的是依然有一科没过。另外爬虫实战内容也大体整理过思路，数据结构继续看视频吧。8月1日到8月5日的任务就是把静觅的课程看完，接近20个章节，吃透是有点难的，但是要写出项目来啊。加油">
+<meta name="twitter:title" content="““c语言数据结构笔记一">
+<meta name="twitter:description" content="#线性表 结构体typedef struct  {   int a;     float b;     char c; }结构体名;  typedef struct 结构体名 {   int a;     float b;         char c;     struct 结构体名 *d;     }结构体名;">
   
     <link rel="alternative" href="/atom.xml" title="Cherry" type="application/atom+xml">
   
@@ -154,28 +154,125 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-8月1日随笔" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-““c语言数据结构笔记一" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      8月1日随笔
+      ““c语言数据结构笔记一
     </h1>
   
 
         
-        <a href="/2017/08/01/8月1日随笔/" class="archive-article-date">
-  	<time datetime="2017-08-01T02:10:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-01</time>
+        <a href="/2017/09/15/““c语言数据结构笔记一/" class="archive-article-date">
+  	<time datetime="2017-09-15T09:06:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-15</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>七月份时间用在驾照的学习上，从7月5号开始到7月28日结束，可惜的是依然有一科没过。<br>另外爬虫实战内容也大体整理过思路，数据结构继续看视频吧。<br>8月1日到8月5日的任务就是把静觅的课程看完，接近20个章节，吃透是有点难的，但是要写出项目来啊。加油</p>
+        <p>#线性表</p>
+<h2 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h2><pre><code>typedef struct 
+{   int a;
+    float b;
+    char c;
+}结构体名;
 
+typedef struct 结构体名
+{   int a;
+    float b;    
+    char c;
+    struct 结构体名 *d;    
+}结构体名;
+</code></pre><a id="more"></a>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><pre><code>int result=0;
+void getResult(int &amp;r){
+    ++r;
+}
+调用:getResult(result),
+
+int *p=NULL;
+void getResult(int *&amp;P){
+    P=q;
+}
+调用:getResult(p);
+</code></pre><h2 id="链式存储结构"><a href="#链式存储结构" class="headerlink" title="链式存储结构"></a>链式存储结构</h2><pre><code>typedef struct LNode
+{
+    int data;
+    struct LNode *next;
+}LNode;
+LNode *L;
+L=(LNode*)malloc(sizeof(LNode));
+A-&gt;next=B;B-&gt;next=C;C-&gt;next=d
+</code></pre><h2 id="双链表"><a href="#双链表" class="headerlink" title="双链表"></a>双链表</h2><pre><code>typedef struct DLNode
+{int data;
+struct DLNode *next;
+struct DLNode *prior;    
+}DLNode;
+
+LNode *L;
+L=(DLNode *)malloc(sizeof(DLNode));
+A-&gt;next=B;B-&gt;next=C;C-&gt;next=D;
+D-&gt;prior=C;C-&gt;prior=B;B-&gt;prior=A;
+</code></pre><p>带头节点但是头节点不放内容的双链表为空：Head-&gt;next==NULL为真<br>带头节点且头节点放内容：Head==NULL为真<br>循环链表为空：Head-&gt;next==head为真，或者Head-&gt;prior==head为真<br>顺序表支持随机存取，单链表不支持，双链表可以推知其他结点位置，但不支持随机存取，有时候会给链表定义一个额外的指针，最常见的是指向最后一个结点，可以提高效率。<br>线性表必须占用连续的存储空间，但链式存储结构不需要这样<br>从表整体来看，顺序表存储空间利用率低于链表，但从单个存储单元来看，顺序表存储空间利用率高于链表</p>
+<h2 id="第二节-2-操作"><a href="#第二节-2-操作" class="headerlink" title="第二节[2]操作"></a>第二节[2]操作</h2><p>给链表设置头结点，可以使得在第一个数据之前插入一个新结点和删除第一个数据结点的操作同表中的操作统一，方便写代码。<br>带头结点的链表，其头指针值不随操作而改变，可以减少错误(有些时候除了head，还会有很多指针指向第一个数据，这样在不含有头结点的时候进行插入很麻烦)</p>
+<p>对于双链表来说,增加一个结点：</p>
+<pre><code>s-&gt;next=p-next;
+s-&gt;prior=p;
+p-next=s;
+s-&gt;next-&gt;prior=s;
+</code></pre><p>删除一个结点：</p>
+<pre><code>s-&gt;prior-&gt;next=s-&gt;next;
+s-&gt;next-&gt;prior=p;
+free(s);
+</code></pre><h2 id="第二节-3-元素移动次数和静态链表"><a href="#第二节-3-元素移动次数和静态链表" class="headerlink" title="第二节[3]元素移动次数和静态链表"></a>第二节[3]元素移动次数和静态链表</h2><p>1.n个元素的顺序表，插入元素总移动次数是(n+0)(n+1)/2,平均移动次数是n/2.<br>删除元素平均移动次数是（n-1）/2。<br>2.静态链表是存储空间一次性分配完毕。</p>
+<p>静态链表结点类型定义</p>
+<pre><code>typedef struct 
+{
+    int data;
+    int next;
+}SLNode;
+
+SLNode SLink[maxSize];
+
+int p=Ad0;//定义一个指针
+SLink[p].data;//取p指针指向的结点值
+SLink[p].next;//取p后继结点指针
+//在p后面插入结点q
+SLink[q].next=SLink[p].next;
+SLink[p].next=q;
+</code></pre><h2 id="第二节-4-顺序表的插入删除"><a href="#第二节-4-顺序表的插入删除" class="headerlink" title="第二节[4]顺序表的插入删除"></a>第二节[4]顺序表的插入删除</h2><pre><code>//在顺序表下标为p的位置插入一个值e
+int sqList[maxSize]={1,2,3,..，n};
+int length=n;
+
+int insertElement(int sqList[],int &amp;length,int p,int e)
+{
+    if(p&lt;0||p&gt;length||length==maxSize)
+        return 0；
+    for( int 5i=length-1;i&gt;=p;--i)
+        sqList[i+1]=sqList[i];
+    sqList[p]=e;
+    ++length;
+    return 1;
+}
+//在顺序表下标为p的位置删除一个值e
+int sqListp[maxSize]={1,2,3,...,n};
+int length=n;
+
+int delateElement(int sqList[],int &amp;length,int p,int &amp;e)
+{    
+    if (p&lt;0||p&gt;length-1)
+        return 0;
+    e=sqList[p];
+    for(int i=p;i&lt;=length-1;++i)    
+        sqList[i]=sqList[i+1];
+    --length;
+    return 1;
+}
+</code></pre>
       
 
       
@@ -209,7 +306,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
         		</li>
       		
 		</ul>
@@ -265,7 +362,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/08/01/8月1日随笔/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/09/15/““c语言数据结构笔记一/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -279,18 +376,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/08/02/爬虫笔记三/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/08/01/爬虫笔记二/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">爬虫笔记二</div>
+    <a href="/2017/08/09/“2017年8月9日随笔/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
       <i class="icon-circle-right"></i>
     </a>
   
